@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Admin dashboard for portfolio content" />
+    <title>Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" />
+    </noscript>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a class="brand" href="index.html">Portfolio Admin</a>
+                <div class="nav-links">
+                    <a href="index.html" target="_blank" rel="noopener noreferrer">View Site</a>
+                    <button id="logoutBtn" class="btn btn-secondary" type="button">Logout</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="admin-layout">
+        <section class="admin-shell">
+            <aside class="admin-sidebar">
+                <button class="tab-btn active" data-tab="about"
+                    style="background-color: var(--surface-alt); color: var(--text);">About</button>
+                <button class="tab-btn" data-tab="education"
+                    style="background-color: var(--surface-alt); color: var(--text);">Education</button>
+                <button class="tab-btn" data-tab="experience"
+                    style="background-color: var(--surface-alt); color: var(--text);">Experience</button>
+                <button class="tab-btn" data-tab="skills"
+                    style="background-color: var(--surface-alt); color: var(--text);">Skills</button>
+                <button class="tab-btn" data-tab="projects"
+                    style="background-color: var(--surface-alt); color: var(--text);">Projects</button>
+                <button class="tab-btn" data-tab="certificates"
+                    style="background-color: var(--surface-alt); color: var(--text);">Certificates</button>
+                <button class="tab-btn" data-tab="messages"
+                    style="background-color: var(--surface-alt); color: var(--text);">Messages</button>
+            </aside>
+
+            <section class="admin-main">
+                <article class="admin-card" data-panel="about">
+                    <h2>About Information</h2>
+                    <form id="aboutForm">
+                        <div class="form-grid">
+                            <div class="input-wrap">
+                                <label for="name">Name</label>
+                                <input id="name" name="name" type="text" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="intro">Intro</label>
+                                <input id="intro" name="intro" type="text" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="phone">Phone</label>
+                                <input id="phone" name="phone" type="text" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="location">Location</label>
+                                <input id="location" name="location" type="text" required />
+                            </div>
+                            <input id="profileImage" name="profile_image" type="hidden" />
+                            <div class="input-wrap">
+                                <label for="instagramUrl">Instagram URL</label>
+                                <input id="instagramUrl" name="instagram_url" type="url" />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="githubUrl">GitHub URL</label>
+                                <input id="githubUrl" name="github_url" type="url" />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="linkedinUrl">LinkedIn URL</label>
+                                <input id="linkedinUrl" name="linkedin_url" type="url" />
+                            </div>
+                        </div>
+                        <div class="input-wrap">
+                            <label for="about">About</label>
+                            <textarea id="about" name="about" required></textarea>
+                        </div>
+                        <div class="input-wrap">
+                            <label for="aboutImageUpload">Upload Profile Image</label>
+                            <input id="aboutImageUpload" name="aboutImageUpload" type="file" accept="image/*" />
+                            <div class="upload-actions">
+                                <button class="btn btn-secondary" id="uploadAboutImageBtn" type="button">Upload and set
+                                    profile image</button>
+                                <button class="btn btn-secondary" id="removeAboutImageBtn" type="button">Remove
+                                    image</button>
+                            </div>
+                            <img id="aboutImagePreview" class="upload-preview"
+                                src="assets/images/profile-placeholder.svg" alt="Profile preview" />
+                        </div>
+                        <button class="btn btn-primary" type="submit">Save About</button>
+                    </form>
+                    <p id="aboutStatus" class="status"></p>
+                </article>
+
+                <article class="admin-card" data-panel="education" hidden>
+                    <h2>Education</h2>
+                    <form id="educationForm">
+                        <input type="hidden" name="id" />
+                        <input id="educationImageUrl" name="image_url" type="hidden" />
+                        <div class="form-grid">
+                            <div class="input-wrap">
+                                <label for="institution">Institution</label>
+                                <input id="institution" name="institution" type="text" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="degree">Degree</label>
+                                <input id="degree" name="degree" type="text" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="yearStart">Start Year</label>
+                                <input id="yearStart" name="year_start" type="number" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="yearEnd">End Year</label>
+                                <input id="yearEnd" name="year_end" type="number" />
+                            </div>
+                        </div>
+                        <div class="input-wrap">
+                            <label for="educationImageUpload">Upload Education Image</label>
+                            <input id="educationImageUpload" name="educationImageUpload" type="file" accept="image/*" />
+                            <div class="upload-actions">
+                                <button class="btn btn-secondary" id="uploadEducationImageBtn" type="button">Upload and
+                                    set
+                                    education image</button>
+                                <button class="btn btn-secondary" id="removeEducationImageBtn" type="button">Remove
+                                    image</button>
+                            </div>
+                            <img id="educationImagePreview" class="upload-preview"
+                                src="assets/images/certificate-placeholder.svg" alt="Education preview" />
+                        </div>
+                        <button class="btn btn-primary" type="submit">Save Education</button>
+                    </form>
+                    <p id="educationStatus" class="status"></p>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Institution</th>
+                                    <th>Degree</th>
+                                    <th>Years</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="educationTableBody"></tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="admin-card" data-panel="experience" hidden>
+                    <h2>Experience</h2>
+                    <form id="experienceForm">
+                        <input type="hidden" name="id" />
+                        <input id="experienceLogoUrl" name="logo_url" type="hidden" />
+                        <div class="form-grid">
+                            <div class="input-wrap">
+                                <label for="company">Company</label>
+                                <input id="company" name="company" type="text" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="role">Role</label>
+                                <input id="role" name="role" type="text" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="experienceLocation">Location</label>
+                                <input id="experienceLocation" name="location" type="text" />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="experienceYearStart">Start Year</label>
+                                <input id="experienceYearStart" name="year_start" type="number" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="experienceYearEnd">End Year</label>
+                                <input id="experienceYearEnd" name="year_end" type="number" />
+                            </div>
+                        </div>
+                        <div class="input-wrap">
+                            <label for="experienceDescription">Description</label>
+                            <textarea id="experienceDescription" name="description"></textarea>
+                        </div>
+                        <div class="input-wrap">
+                            <label for="experienceLogoUpload">Upload Company Logo (optional)</label>
+                            <input id="experienceLogoUpload" name="experienceLogoUpload" type="file" accept="image/*" />
+                            <div class="upload-actions">
+                                <button class="btn btn-secondary" id="uploadExperienceLogoBtn" type="button">Upload and
+                                    set
+                                    logo</button>
+                                <button class="btn btn-secondary" id="removeExperienceLogoBtn" type="button">Remove
+                                    logo</button>
+                            </div>
+                            <img id="experienceLogoPreview" class="upload-preview"
+                                src="assets/images/project-placeholder.svg" alt="Experience logo preview" />
+                        </div>
+                        <button class="btn btn-primary" type="submit">Save Experience</button>
+                    </form>
+                    <p id="experienceStatus" class="status"></p>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Company</th>
+                                    <th>Role</th>
+                                    <th>Years</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="experienceTableBody"></tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="admin-card" data-panel="skills" hidden>
+                    <h2>Skills</h2>
+                    <form id="skillForm">
+                        <input type="hidden" name="id" />
+                        <input id="skillImageUrl" name="image_url" type="hidden" />
+                        <div class="form-grid">
+                            <div class="input-wrap">
+                                <label for="skillTitle">Title</label>
+                                <input id="skillTitle" name="title" type="text" required />
+                            </div>
+
+                            <div class="input-wrap">
+                                <label for="skillIcon">Icon (emoji or text)</label>
+                                <input id="skillIcon" name="icon" type="text" placeholder="⚡" />
+                            </div>
+
+                            <div class="input-wrap">
+                                <label for="skillPercent">Knowledge %</label>
+                                <input id="skillPercent" name="knowledge_percent" type="number" min="0" max="100"
+                                    value="0" />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="skillOrder">Display Order (1-10)</label>
+                                <input id="skillOrder" name="display_order" type="number" min="1" max="10" value="1" />
+                            </div>
+                        </div>
+
+                        <div class="input-wrap">
+                            <label for="skillSummary">Summary</label>
+                            <input id="skillSummary" name="summary" type="text" placeholder="Short one-line summary" />
+                        </div>
+
+                        <div class="input-wrap">
+                            <label for="skillDetails">Details</label>
+                            <textarea id="skillDetails" name="details"
+                                placeholder="Explain your skill in more detail"></textarea>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="input-wrap">
+                                <label for="skillTools">Tools (comma separated)</label>
+                                <input id="skillTools" name="tools" type="text" placeholder="React, Node.js, Git" />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="skillProjectIds">Project IDs (comma separated)</label>
+                                <input id="skillProjectIds" name="project_ids" type="text" placeholder="1, 2, 3" />
+                                <p id="skillProjectIdsHelp" class="section-intro" style="margin-top: 0.5rem;"></p>
+                            </div>
+                        </div>
+
+                        <div class="input-wrap">
+                            <label for="skillImageUpload">Upload Skill Image</label>
+                            <input id="skillImageUpload" name="skillImageUpload" type="file" accept="image/*" />
+                            <div class="upload-actions">
+                                <button class="btn btn-secondary" id="uploadSkillImageBtn" type="button">Upload and set
+                                    image</button>
+                                <button class="btn btn-secondary" id="removeSkillImageBtn" type="button">Remove
+                                    image</button>
+                            </div>
+                            <img id="skillImagePreview" class="upload-preview"
+                                src="assets/images/project-placeholder.svg" alt="Skill preview" />
+                        </div>
+
+                        <button class="btn btn-primary" type="submit">Save Skill</button>
+                    </form>
+                    <p id="skillStatus" class="status"></p>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Knowledge %</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="skillsTableBody"></tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="admin-card" data-panel="projects" hidden>
+                    <h2>Projects</h2>
+                    <form id="projectForm">
+                        <input type="hidden" name="id" />
+                        <div class="form-grid">
+                            <div class="input-wrap">
+                                <label for="projectTitle">Title</label>
+                                <input id="projectTitle" name="title" type="text" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="projectSummary">Summary</label>
+                                <input id="projectSummary" name="summary" type="text" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="projectTech">Tech stack (comma separated)</label>
+                                <input id="projectTech" name="tech_stack" type="text" required />
+                            </div>
+                            <input id="projectImages" name="images" type="hidden" />
+                            <div class="input-wrap">
+                                <label for="projectLive">Live Demo URL</label>
+                                <input id="projectLive" name="live_url" type="url" />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="projectGithub">GitHub URL</label>
+                                <input id="projectGithub" name="github_url" type="url" />
+                            </div>
+                        </div>
+                        <div class="input-wrap">
+                            <label for="projectDescription">Description</label>
+                            <textarea id="projectDescription" name="description" required></textarea>
+                        </div>
+                        <div class="input-wrap">
+                            <label for="projectImageUpload">Upload Images to Supabase Storage</label>
+                            <input id="projectImageUpload" name="projectImageUpload" type="file" accept="image/*"
+                                multiple />
+                            <div class="upload-actions">
+                                <button class="btn btn-secondary" id="uploadProjectImageBtn" type="button">Upload and
+                                    add
+                                    image</button>
+                                <button class="btn btn-secondary" id="removeProjectImageBtn" type="button">Remove
+                                    image</button>
+                            </div>
+                            <img id="projectImagePreview" class="upload-preview"
+                                src="assets/images/project-placeholder.svg" alt="Project preview" />
+                            <div id="projectImagesGallery" class="upload-gallery" hidden></div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Save Project</button>
+                    </form>
+                    <p id="projectStatus" class="status"></p>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Summary</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="projectsTableBody"></tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="admin-card" data-panel="certificates" hidden>
+                    <h2>Certificates</h2>
+                    <form id="certificateForm">
+                        <input type="hidden" name="id" />
+                        <div class="form-grid">
+                            <div class="input-wrap">
+                                <label for="certificateTitle">Title</label>
+                                <input id="certificateTitle" name="title" type="text" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="certificateSummary">Summary</label>
+                                <input id="certificateSummary" name="summary" type="text" required />
+                            </div>
+                            <input id="certificateImageUrl" name="image_url" type="hidden" />
+                            <div class="input-wrap">
+                                <label for="certificateUrl">Certificate URL</label>
+                                <input id="certificateUrl" name="certificate_url" type="url" />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="issuedBy">Issued By</label>
+                                <input id="issuedBy" name="issued_by" type="text" />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="issuedOn">Issued On</label>
+                                <input id="issuedOn" name="issued_on" type="date" />
+                            </div>
+                        </div>
+                        <div class="input-wrap">
+                            <label for="certificateDescription">Description</label>
+                            <textarea id="certificateDescription" name="description" required></textarea>
+                        </div>
+                        <div class="input-wrap">
+                            <label for="certificateImageUpload">Upload Certificate Image</label>
+                            <input id="certificateImageUpload" name="certificateImageUpload" type="file"
+                                accept="image/*" />
+                            <div class="upload-actions">
+                                <button class="btn btn-secondary" id="uploadCertificateImageBtn" type="button">Upload
+                                    and
+                                    set image</button>
+                                <button class="btn btn-secondary" id="removeCertificateImageBtn" type="button">Remove
+                                    image</button>
+                            </div>
+                            <img id="certificateImagePreview" class="upload-preview"
+                                src="assets/images/certificate-placeholder.svg" alt="Certificate preview" />
+                        </div>
+                        <button class="btn btn-primary" type="submit">Save Certificate</button>
+                    </form>
+                    <p id="certificateStatus" class="status"></p>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Issued By</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="certificatesTableBody"></tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="admin-card" data-panel="messages" hidden>
+                    <h2>Contact Messages</h2>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Subject</th>
+                                    <th>Message</th>
+                                    <th>Created At</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="messagesTableBody"></tbody>
+                        </table>
+                    </div>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <script type="module" src="assets/js/admin.js"></script>
+</body>
+
+</html>

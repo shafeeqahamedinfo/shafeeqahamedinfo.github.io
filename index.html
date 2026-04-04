@@ -1,2333 +1,286 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="tPDEEIM07uCY6uw4BFG9kpHrJu0hHAsqkiKpwEUIcqI" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShafeeqAhamed M Portfolio</title>
     <meta name="google-site-verification" content="hSOqNk-DcUxr4Qm7s7BedSXdNd16fRdUaFH-PpVyALU" />
     <meta name="description" content="Shafeeq Ahamed M - B.E. CSE student at Annamalai University. Passionate about web development, software engineering, and creative tech projects.">
-     <meta name="author" content="Shafeeq Ahamed M">
-    <link rel="icon" href="recycle.png">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-	
-body {
-	background-color: ;
-	cursor: url('image.gif'), auto;
-}
-.Fr4me {
-	width: auto;
-	margin: 0 auto;
-	border: 2px solid );
-	margin:auto;
-}
-.transform {
-  width: 80%;
-  overflow: hidden;
-  margin: 0 auto;
-}
-.transform img {
-  width: 100%;
-  transition: 0.17s all ease-in-out;
-}
-.transform:hover img {
-  transform: scale(1.04);
-}
-
-/* Logo_unbr34k4bL */
-.Logo {
-	display: flex;
-	justify-content: center;
-	overflow: auto;
-	white-space:nowrap;
-	width: 1050px;
-}    	
-.unbr34k4bL {
- 	-ms-overflow-style: none;
-	scrollbar-width: none;
-}
-.unbr34k4bL::-webkit-scrollbar {
-  display: none;
-}
-</style>
-<style>/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #4f46e5;
-    --primary-dark: #4338ca;
-    --primary-light: #6366f1;
-    --secondary-color: #f3f4f6;
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --text-light: #9ca3af;
-    --bg-primary: #ffffff;
-    --bg-secondary: #f9fafb;
-    --bg-tertiary: #f3f4f6;
-    --border-color: #e5e7eb;
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    --transition: all 0.3s ease;
-}
-
-[data-theme="dark"] {
-    --text-primary: #f9fafb;
-    --text-secondary: #d1d5db;
-    --text-light: #9ca3af;
-    --bg-primary: #111827;
-    --bg-secondary: #1f2937;
-    --bg-tertiary: #374151;
-    --border-color: #374151;
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    color: var(--text-primary);
-    background-color: var(--bg-primary);
-    transition: var(--transition);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-/* Navigation */
-.navbar {
-    position: fixed;
-    width:auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    transition: var(--transition);
-    background-color: transparent;
-}
-
-.navbar.scrolled {
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-md);
-}
-
-[data-theme="dark"] .navbar.scrolled {
-    background-color: rgba(17, 24, 39, 0.9);
-}
-
-.nav-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 5rem;
-}
-
-.logo h1 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.logo span {
-    color: var(--text-primary);
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-.theme-toggle {
-    background: var(--bg-tertiary);
-    border: none;
-    border-radius: 50%;
-    width: 2.5rem;
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: var(--transition);
-    color: var(--text-primary);
-}
-
-.theme-toggle:hover {
-    background: var(--primary-color);
-    color: white;
-}
-
-.mobile-nav {
-    display: none;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.mobile-menu-toggle {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--text-primary);
-    padding: 0.5rem;
-}
-
-.mobile-menu {
-    display: none;
-    background: var(--bg-primary);
-    box-shadow: var(--shadow-lg);
-    padding: 1rem 0;
-}
-
-.mobile-menu.active {
-    display: block;
-}
-
-.mobile-menu a {
-    display: block;
-    padding: 0.75rem 1rem;
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.mobile-menu a:hover {
-    background: var(--bg-secondary);
-    color: var(--primary-color);
-}
-
-/* Hero Section */
-.hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-    overflow: hidden;
-}
-
-.hero-bg {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-}
-
-.hero-shape {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(60px);
-    opacity: 0.1;
-}
-
-.hero-shape-1 {
-    top: 5rem;
-    right: 2.5rem;
-    width: 16rem;
-    height: 16rem;
-    background: var(--primary-color);
-}
-
-.hero-shape-2 {
-    bottom: 5rem;
-    left: 2.5rem;
-    width: 18rem;
-    height: 18rem;
-    background: #3b82f6;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    max-width: 64rem;
-    margin: 0 auto;
-    animation: fadeInUp 1s ease-out;
-}
-
-.hero-badge {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: rgba(79, 70, 229, 0.1);
-    color: var(--primary-color);
-    border-radius: 2rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    animation: fadeInUp 1s ease-out 0.2s both;
-}
-
-.hero-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    animation: fadeInUp 1s ease-out 0.4s both;
-}
-
-.highlight {
-    color: var(--primary-color);
-}
-
-.hero-description {
-    font-size: clamp(1.125rem, 2vw, 1.5rem);
-    color: var(--text-secondary);
-    margin-bottom: 2.5rem;
-    max-width: 32rem;
-    margin-left: auto;
-    margin-right: auto;
-    animation: fadeInUp 1s ease-out 0.6s both;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-    animation: fadeInUp 1s ease-out 0.8s both;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 2rem;
-    border-radius: 0.5rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: var(--transition);
-    cursor: pointer;
-    border: none;
-    font-size: 1rem;
-}
-
-.btn-primary {
-    background: var(--primary-color);
-    color: white;
-    box-shadow: var(--shadow-md);
-}
-
-.btn-primary:hover {
-    background: var(--primary-dark);
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background: var(--bg-tertiary);
-    color: var(--text-primary);
-}
-
-.btn-secondary:hover {
-    background: var(--border-color);
-}
-
-.hero-social {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    animation: fadeInUp 1s ease-out 1s both;
-}
-
-.hero-social a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    background: var(--bg-tertiary);
-    color: var(--text-secondary);
-    border-radius: 50%;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.hero-social a:hover {
-    background: rgba(79, 70, 229, 0.1);
-    color: var(--primary-color);
-    transform: translateY(-2px);
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--text-light);
-    animation: bounce 2s infinite;
-}
-
-/* Section Styles */
-section {
-    padding: 5rem 0;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.section-header h2 {
-    font-size: clamp(2rem, 4vw, 2.5rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.section-divider {
-    width: 6rem;
-    height: 0.25rem;
-    background: var(--primary-color);
-    margin: 0 auto 2rem;
-}
-
-.section-header p {
-    color: var(--text-secondary);
-    max-width: 32rem;
-    margin: 0 auto;
-}
-
-/* About Section */
-.about {
-    background: var(--bg-primary);
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    margin-bottom: 4rem;
-}
-
-.about-text h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.about-text p {
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
-}
-
-.about-highlights {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.highlight-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.highlight-item i {
-    color: var(--primary-color);
-}
-
-.about-image {
-    position: relative;
-}
-
-.image-container {
-    aspect-ratio: 1;
-    overflow: hidden;
-    border-radius: 1rem;
-    background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
-    padding: 0.25rem;
-    box-shadow: var(--shadow-xl);
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0.75rem;
-}
-
-.image-decoration {
-    position: absolute;
-    border-radius: 0.5rem;
-    filter: blur(20px);
-}
-
-.image-decoration-1 {
-    bottom: -1rem;
-    left: -1rem;
-    width: 6rem;
-    height: 6rem;
-    background: rgba(251, 191, 36, 0.2);
-}
-
-.image-decoration-2 {
-    top: -1rem;
-    right: -1rem;
-    width: 8rem;
-    height: 8rem;
-    background: rgba(79, 70, 229, 0.2);
-}
-
-.education-timeline {
-    background: var(--bg-secondary);
-    border-radius: 0.75rem;
-    padding: 2rem;
-    box-shadow: var(--shadow-md);
-}
-
-.education-timeline h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-}
-
-.timeline {
-    position: relative;
-}
-
-.timeline-item {
-    display: flex;
-    margin-bottom: 2rem;
-}
-
-.timeline-item:last-child {
-    margin-bottom: 0;
-}
-
-.timeline-marker {
-    width: 1rem;
-    height: 1rem;
-    background: var(--primary-color);
-    border-radius: 50%;
-    margin-right: 1rem;
-    margin-top: 0.25rem;
-    flex-shrink: 0;
-}
-
-.timeline-content h4 {
-    font-size: 1.125rem;
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-}
-
-.timeline-institution {
-    color: var(--primary-color);
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-}
-
-.timeline-date {
-    color: var(--text-light);
-    font-size: 0.875rem;
-    margin-bottom: 0.5rem;
-}
-
-.timeline-content p:last-child {
-    color: var(--text-secondary);
-    margin: 0;
-}
-
-/* Skills Section */
-.skills {
-    background: var(--bg-secondary);
-}
-
-.skills-categories {
-    display: grid;
-    gap: 3rem;
-}
-
-.skill-category h3 {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-}
-
-.skill-category i {
-    color: var(--primary-color);
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.skill-item {
-    background: var(--bg-primary);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition);
-}
-
-.skill-item:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-}
-
-.skill-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.skill-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    background: rgba(79, 70, 229, 0.1);
-    color: var(--primary-color);
-    border-radius: 0.5rem;
-    margin-right: 1rem;
-    font-size: 1.5rem;
-}
-
-.skill-header h4 {
-    font-size: 1.125rem;
-    font-weight: 500;
-}
-
-.skill-bar {
-    width: 100%;
-    height: 0.5rem;
-    background: var(--bg-tertiary);
-    border-radius: 0.25rem;
-    overflow: hidden;
-    margin-bottom: 0.5rem;
-}
-
-.skill-progress {
-    height: 100%;
-    background: var(--primary-color);
-    border-radius: 0.25rem;
-    transition: width 1s ease-in-out;
-    width: 0;
-}
-
-/* Projects Section */
-.projects {
-    background: var(--bg-primary);
-}
-
-.projects-section {
-    margin-bottom: 4rem;
-}
-
-.projects-section h3 {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-}
-
-.projects-section i {
-    color: var(--primary-color);
-}
-
-.projects-grid {
-    display: grid;
-    gap: 2rem;
-}
-
-.featured-projects {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-}
-
-.other-projects {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.project-card {
-    background: var(--bg-secondary);
-    border-radius: 0.75rem;
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    transition: var(--transition);
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
-}
-
-.project-image {
-    position: relative;
-    aspect-ratio: 16/9;
-    overflow: hidden;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.project-card:hover .project-image img {
-    transform: scale(1.1);
-}
-
-.project-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 1.5rem;
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.project-card:hover .project-overlay {
-    opacity: 1;
-}
-
-.project-overlay h4 {
-    color: white;
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.project-tags span {
-    padding: 0.25rem 0.5rem;
-    background: rgba(79, 70, 229, 0.8);
-    color: white;
-    border-radius: 0.25rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-}
-
-.project-content {
-    padding: 1.5rem;
-}
-
-.project-content h4 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.project-content p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
-
-.project-content .project-tags {
-    margin-bottom: 1rem;
-}
-
-.project-content .project-tags span {
-    background: rgba(79, 70, 229, 0.1);
-    color: var(--primary-color);
-}
-
-.project-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.project-links a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.project-links a:hover {
-    color: var(--primary-dark);
-}
-
-.projects-footer {
-    text-align: center;
-}
-
-/* Contact Section */
-.contact {
-    background: var(--bg-secondary);
-}
-
-.contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-}
-
-.contact-card {
-    background: var(--bg-primary);
-    border-radius: 0.75rem;
-    padding: 2rem;
-    box-shadow: var(--shadow-md);
-}
-
-.contact-card h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-}
-
-.contact-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
-}
-
-.contact-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    background: rgba(79, 70, 229, 0.1);
-    color: var(--primary-color);
-    border-radius: 0.5rem;
-    margin-right: 1rem;
-    flex-shrink: 0;
-}
-
-.contact-details h4 {
-    font-size: 1.125rem;
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-}
-
-.contact-details a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.contact-details a:hover {
-    color: var(--primary-color);
-}
-
-.contact-details p {
-    color: var(--text-secondary);
-    margin: 0;
-}
-
-.contact-social {
-    margin-top: 2rem;
-}
-
-.contact-social h4 {
-    font-size: 1.125rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    background: var(--bg-tertiary);
-    color: var(--text-secondary);
-    border-radius: 50%;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.social-links a:hover {
-    background: rgba(79, 70, 229, 0.1);
-    color: var(--primary-color);
-}
-
-.form-status {
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.form-status.success {
-    background: rgba(34, 197, 94, 0.1);
-    color: #16a34a;
-}
-
-.form-status.error {
-    background: rgba(239, 68, 68, 0.1);
-    color: #dc2626;
-}
-
-.form-status.loading {
-    background: rgba(59, 130, 246, 0.1);
-    color: #2563eb;
-}
-
-.contact-form {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.form-group {
-    display: grid;
-    gap: 0.5rem;
-}
-
-.form-group label {
-    font-weight: 500;
-    color: var(--text-secondary);
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 0.75rem;
-    border: 1px solid var(--border-color);
-    border-radius: 0.5rem;
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    font-family: inherit;
-    transition: var(--transition);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-#submit-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.loading-spinner {
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    border: 2px solid transparent;
-    border-top: 2px solid currentColor;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-/* Footer */
-.footer {
-    background: var(--bg-secondary);
-    color: var(--text-primary);
-    padding: 4rem 0 2rem;
-    min-height: 400px;
-    width: 100%;
-    max-width: 100vw;
-}
-
-[data-theme="dark"] .footer {
-    background: #0f172a;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 3rem;
-    margin-bottom: 3rem;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.footer-section h2,
-.footer-section h3 {
-    margin-bottom: 1.5rem;
-}
-
-.footer-logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-.footer-logo span {
-    color: var(--text-primary);
-}
-
-.footer-section p {
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-    line-height: 1.7;
-    font-size: 1rem;
-}
-
-.footer-social {
-    display: flex;
-    gap: 1.25rem;
-}
-
-.footer-social a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    background: var(--bg-tertiary);
-    color: var(--text-secondary);
-    border-radius: 50%;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.footer-social a:hover {
-    background: var(--primary-color);
-    color: white;
-    transform: translateY(-2px);
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-.footer-section ul li {
-    margin-bottom: 0.75rem;
-}
-
-.footer-section ul a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: var(--transition);
-    font-size: 1rem;
-}
-
-.footer-section ul a:hover {
-    color: var(--primary-color);
-}
-
-.footer-contact li {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-}
-
-.footer-contact i {
-    color: var(--primary-color);
-    width: 1.25rem;
-    font-size: 1.125rem;
-}
-
-.footer-bottom {
-    border-top: 1px solid var(--border-color);
-    padding-top: 2rem;
-}
-
-.footer-bottom-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.footer-bottom p {
-    color: var(--text-light);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1rem;
-}
-
-.footer-bottom .fa-heart {
-    color: #ef4444;
-}
-
-.scroll-to-top {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.scroll-to-top:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes bounce {
-    0%, 20%, 53%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
-    }
-    40%, 43% {
-        transform: translateX(-50%) translateY(-10px);
-    }
-    70% {
-        transform: translateX(-50%) translateY(-5px);
-    }
-    90% {
-        transform: translateX(-50%) translateY(-2px);
-    }
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .mobile-nav {
-        display: flex;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .about-image {
-        order: -1;
-    }
-    
-    .about-highlights {
-        grid-template-columns: 1fr;
-    }
-    
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .featured-projects {
-        grid-template-columns: 1fr;
-    }
-    
-    .other-projects {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .footer {
-        padding: 3rem 0 1.5rem;
-        min-height: 350px;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        margin-bottom: 2rem;
-    }
-    
-    .footer-bottom-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 0.75rem;
-    }
-    
-    section {
-        padding: 3rem 0;
-    }
-    
-    .hero-social {
-        gap: 1rem;
-    }
-    
-    .hero-social a {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-    
-    .education-timeline,
-    .contact-card {
-        padding: 1.5rem;
-    }
-    
-    .footer {
-        padding: 2.5rem 0 1rem;
-        min-height: 300px;
-    }
-    
-    .footer-content {
-        gap: 1.5rem;
-    }
-}
-</style>
+    <meta name="author" content="ShafeeqAhamed M">
+    <link rel="icon" href="shafeeq.jpeg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" />
+    </noscript>
+
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWix+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkR4j8R3Qz4hU6TQW4fF9Qc6M3S+f2u2Q1EA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWix+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkR4j8R3Qz4hU6TQW4fF9Qc6M3S+f2u2Q1EA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </noscript>
+    <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body>
-    <div class="Fr4me">
-		<div class="transform"> <a href="h0me"> </a></div>
-		<div class="Logo unbr34k4bL"> </div>
-    <!-- Navigation -->
-    <header id="navbar" class="navbar">
+
+<body class="bottom-nav">
+
+    <canvas id="Matrix" class="matrix-canvas" aria-hidden="true"></canvas>
+    <script>
+        (() => {
+            const canvas = document.getElementById("Matrix");
+            if (!canvas) return;
+
+            const context = canvas.getContext("2d");
+            if (!context) return;
+
+            const prefersReducedMotion = window.matchMedia
+                ? window.matchMedia("(prefers-reduced-motion: reduce)")
+                : null;
+            if (prefersReducedMotion?.matches) return;
+
+            const katakana =
+                "";
+            const latin = "SHAFEEQAHAMED M";
+            const nums = "+91 8489481039";
+            const alphabet = katakana + latin + nums;
+
+            const fontSize = 16;
+            let columns = 0;
+            let rainDrops = [];
+
+            let rafId = 0;
+            let running = false;
+            let lastFrameMs = 0;
+            const frameIntervalMs = 33; // ~30fps
+
+            const resizeCanvas = () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                columns = Math.floor(canvas.width / fontSize);
+                rainDrops = new Array(columns).fill(1);
+            };
+
+            const draw = (now) => {
+                if (!running) return;
+                rafId = requestAnimationFrame(draw);
+                if (now - lastFrameMs < frameIntervalMs) return;
+                lastFrameMs = now;
+
+                context.fillStyle = "rgba(0, 0, 0, 0.05)";
+                context.fillRect(0, 0, canvas.width, canvas.height);
+
+                context.fillStyle = "rgb(241, 239, 247)";
+                context.font = `${fontSize}px monospace`;
+
+                for (let i = 0; i < rainDrops.length; i += 1) {
+                    const text = alphabet.charAt((Math.random() * alphabet.length) | 0);
+                    context.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+
+                    if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        rainDrops[i] = 0;
+                    }
+                    rainDrops[i] += 1;
+                }
+            };
+
+            const start = () => {
+                if (running) return;
+                if (document.hidden) return;
+                if (prefersReducedMotion?.matches) return;
+                running = true;
+                lastFrameMs = performance.now();
+                rafId = requestAnimationFrame(draw);
+            };
+
+            const stop = () => {
+                running = false;
+                if (rafId) cancelAnimationFrame(rafId);
+                rafId = 0;
+            };
+
+            resizeCanvas();
+            window.addEventListener("resize", resizeCanvas, { passive: true });
+            document.addEventListener("visibilitychange", () => {
+                if (document.hidden) stop();
+                else start();
+            });
+
+            if (prefersReducedMotion) {
+                const handler = () => {
+                    if (prefersReducedMotion.matches) stop();
+                    else start();
+                };
+                if (typeof prefersReducedMotion.addEventListener === "function") {
+                    prefersReducedMotion.addEventListener("change", handler);
+                } else if (typeof prefersReducedMotion.addListener === "function") {
+                    prefersReducedMotion.addListener(handler);
+                }
+            }
+
+            if ("requestIdleCallback" in window) {
+                requestIdleCallback(start, { timeout: 1500 });
+            } else {
+                setTimeout(start, 0);
+            }
+        })();
+    </script>
+
+
+
+    <header class="site-header site-header--bottom">
         <div class="container">
-            <div class="nav-content">
-                <a href="#about" class="logo">
-                    <h1>SHAFEEQAHAMED<span>.M</span></h1>
-                </a>
-                
-                <nav class="nav-links">
+            <nav class="main-nav" style="background-color: black;">
+                <div class="nav-links">
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
                     <a href="#skills">Skills</a>
                     <a href="#projects">Projects</a>
+                    <a href="#certificates">Certificates</a>
                     <a href="#contact">Contact</a>
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </nav>
-                
-                <div class="mobile-nav">
-                    <button id="mobile-theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
                 </div>
-            </div>
-        </div>
-        
-        <div id="mobile-menu" class="mobile-menu">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg">
-            <div class="hero-shape hero-shape-1"></div>
-            <div class="hero-shape hero-shape-2"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span>Web Developer & CS Student</span>
-                </div>
-                <h1 class="hero-title">
-                    Hi, I'm <span class="highlight">Shafeeq Ahamed</span>
-                </h1>
-                <p class="hero-description">
-                    Creating beautiful, functional websites and applications with passion and precision.
+    <main>
+        <section id="home" class="container hero reveal">
+            <article class="hero-card"
+                style="background-image: url('assets/images/image.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; ">
+                <br><br><br>
+                <h1 id="heroName" class="hero-title">Hi, I am <span>Your Name</span></h1>
+
+                <p id="heroIntro" class="hero-subtitle" style="color: rgb(255, 252, 252);">
+                    I build modern web experiences with scalable backends and clean user interfaces.
                 </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#projects">See My Work</a>
+                    <a class="btn btn-secondary" href="#contact">Contact Me</a>
                 </div>
-                <div class="hero-social">
-                    <a href="https://github.com/shafeeqahamedinfo/profile" target="_blank" aria-label="Github">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/shafeeqahamed-m-40b72a309" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:m.shafeeqahamed2004@gmail.com" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+                <div id="socialLinks" class="social-list">
+                    <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
+            </article><br><br>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2>About Me</h2>
-                <div class="section-divider"></div>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Shafeeq Ahamed M.</h3>
-                    <p>I'm a passionate web developer and Computer Science student with a background in mechanical engineering. My journey from mechanical design to web development has given me a unique perspective on problem-solving and design thinking.</p>
-                    <p>I completed my diploma at the Mechanical Department of MRK Polytechnic College and am currently pursuing a B.E. in Computer Science and Engineering at Annamalai University. I'm passionate about creating intuitive and engaging web experiences that solve real-world problems.</p>
-                    
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>CS Student</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-briefcase"></i>
-                            <span>Web Developer</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-award"></i>
-                            <span>Mechanical Diploma</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-heart"></i>
-                            <span>Design Enthusiast</span>
-                        </div>
-                    </div>
-                    
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                </div>
-                
-                <div class="about-image">
-                    <div class="image-container">
-                        <img src="shafeeq.jpeg" alt="Shafeeq Ahmed">
-                    </div>
-                    <div class="image-decoration image-decoration-1"></div>
-                    <div class="image-decoration image-decoration-2"></div>
-                </div>
-            </div>
-            
-            <div class="education-timeline">
-                <h3>Education Timeline</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h4>B.E. Computer Science and Engineering</h4>
-                            <p class="timeline-institution">Annamalai University</p>
-                            <p class="timeline-date">Present</p>
-                            <p>Currently pursuing my bachelor's degree in Computer Science and Engineering, focusing on web technologies and software development.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h4>Diploma in Mechanical Engineering</h4>
-                            <p class="timeline-institution">MRK Polytechnic College</p>
-                            <p class="timeline-date">Completed</p>
-                            <p>Earned my diploma in Mechanical Engineering, building a strong foundation in technical problem-solving and analytical thinking.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section id="about" class="section">
+            <div class="container about-layout">
+                <article class="info-card reveal">
+                    <img id="profileImageAbout" class="profile-img" src="assets/images/profile-placeholder.svg"
+                        loading="lazy" alt="Profile image" />
+                </article>
+                <article class="info-card reveal">
+                    <h2>About Me</h2>
+                    <p id="aboutText" class="section-intro">
+                        I am a passionate developer focused on creating performant, accessible, and user-focused
+                        applications.
+                    </p>
+                    <h3>Education</h3>
+                    <ul id="educationTimeline" class="timeline"></ul>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2>My Skills</h2>
-                <div class="section-divider"></div>
-                <p>Here's an overview of my technical skills and proficiency levels. I'm constantly learning and improving my skillset.</p>
+                    <h3>Experience</h3>
+                    <ul id="experienceTimeline" class="timeline"></ul>
+                </article>
             </div>
-            
-            <div class="skills-categories">
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Frontend</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-icon">
-                                    <i class="fab fa-html5"></i>
-                                </div>
-                                <h4>HTML & CSS</h4>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-level="80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-icon">
-                                    <i class="fab fa-js"></i>
-                                </div>
-                                <h4>JavaScript</h4>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-level="65"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-icon">
-                                    <i class="fab fa-react"></i>
-                                </div>
-                                <h4>React</h4>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-level="60"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-icon">
-                                    <i class="fas fa-paint-brush"></i>
-                                </div>
-                                <h4>Tailwind CSS</h4>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-level="75"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-server"></i> Backend</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-icon">
-                                    <i class="fab fa-node-js"></i>
-                                </div>
-                                <h4>Node.js</h4>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-level="55"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-icon">
-                                    <i class="fas fa-database"></i>
-                                </div>
-                                <h4>MongoDB</h4>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-level="60"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> Tools & Others</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-icon">
-                                    <i class="fab fa-git-alt"></i>
-                                </div>
-                                <h4>Git & GitHub</h4>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-level="60"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <div class="skill-icon">
-                                    <i class="fab fa-python"></i>
-                                </div>
-                                <h4>Python</h4>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-level="60"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2>My Projects</h2>
-                <div class="section-divider"></div>
-                <p>Here are some of my recent projects. Each one represents a unique challenge and learning opportunity.</p>
-            </div>
-            
-            <div class="projects-section">
-                <h3><i class="fas fa-desktop"></i> Featured Projects</h3>
-                <div class="projects-grid featured-projects">
-                    <div class="project-card featured">
-                        <div class="project-image">
-                            <img src="https://images.pexels.com/photos/1111597/pexels-photo-1111597.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Rock Paper Scissors Game">
-                            <div class="project-overlay">
-                                <h4>Rock Paper Scissors Game</h4>
-                                <div class="project-tags">
-                                    <span>HTML</span>
-                                    <span>CSS</span>
-                                    <span>JavaScript</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4>Rock Paper Scissors Game</h4>
-                            <p>An interactive game built with HTML, CSS, and JavaScript. Features smooth animations and responsive design.</p>
-                            <div class="project-links">
-                                <a href="https://recyclezone.neocities.org/GAMER%2004/Rock%20Paper%20Scissors%20Game" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card featured">
-                        <div class="project-image">
-                            <img src="https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Tic Tac Toe">
-                            <div class="project-overlay">
-                                <h4>Tic Tac Toe</h4>
-                                <div class="project-tags">
-                                    <span>HTML</span>
-                                    <span>CSS</span>
-                                    <span>JavaScript</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4>Tic Tac Toe</h4>
-                            <p>Classic Tic Tac Toe game with a modern interface and multiplayer support.</p>
-                            <div class="project-links">
-                                <a href="https://recyclezone.neocities.org/GAMER%2005/Tic%20Tac%20Toe.HTML" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="projects-section">
-                <h3><i class="fas fa-code"></i> Other Projects</h3>
-                <div class="projects-grid other-projects">
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h4>Loan Calculator</h4>
-                            <p>A user-friendly loan calculator that helps users estimate monthly payments and interest rates.</p>
-                            <div class="project-tags">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://recyclezone.neocities.org/Loan%20calculator/" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h4>Shoe Shop</h4>
-                            <p>E-commerce website for a shoe store with product catalog and shopping cart functionality.</p>
-                            <div class="project-tags">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://recyclezone.neocities.org/project%204%20ok/MY%20SHOE.HTML" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h4>Love Letter Gift</h4>
-                            <p>A creative digital love letter project with animations and interactive elements.</p>
-                            <div class="project-tags">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://recyclezone.neocities.org/LoveProject-master/" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h4>Calculator</h4>
-                            <p>A modern calculator application with basic and advanced mathematical operations.</p>
-                            <div class="project-tags">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://recyclezone.neocities.org/Calculator/inex" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="projects-footer">
-                <a href="https://github.com/shafeeqahamedinfo/profile" target="_blank" class="btn btn-secondary">
-                    <i class="fab fa-github"></i> View More on GitHub
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
-                <div class="section-divider"></div>
-                <p>Have a project in mind or want to discuss a collaboration? Feel free to reach out!</p>
-            </div>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <h3>Contact Information</h3>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Email</h4>
-                                <a href="mailto:m.shafeeqahamed2004@gmail.com">m.shafeeqahamed2004@gmail.com</a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Phone</h4>
-                                <a href="tel:+918489481039">+91 8489481039</a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Location</h4>
-                                <p>Tamil Nadu, India</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-social">
-                            <h4>Follow Me</h4>
-                            <div class="social-links">
-                                <a href="https://www.linkedin.com/in/shafeeqahamed-m-40b72a309" target="_blank" aria-label="LinkedIn">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="https://github.com/shafeeqahamedinfo/profile" target="_blank" aria-label="Github">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://www.instagram.com/m_shafeeqahamed_sad/profilecard/" target="_blank" aria-label="Instagram">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form-container">
-                    <div class="contact-card">
-                        <h3>Send Me a Message</h3>
-                        
-                        <div id="form-status" class="form-status" style="display: none;"></div>
-                        
-                        <form id="contact-form" class="contact-form">
-                            <input type="hidden" name="access_key" value="3c7e424e-c87e-4a13-987c-65163b15c9e2">
-                            
-                            <div class="form-group">
-                                <label for="name">Your Name *</label>
-                                <input type="text" id="name" name="name" required placeholder="John Doe">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required placeholder="john@example.com">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Message *</label>
-                                <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or just say hello..."></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary" id="submit-btn">
-                                <i class="fas fa-paper-plane"></i>
-                                <span>Send Message</span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h2 class="footer-logo">SHAFEEQAHAMED<span>.M</span></h2>
-                    <p>Creating beautiful, functional websites and applications with passion and precision. Let's work together to bring your ideas to life.</p>
-                    <div class="footer-social">
-                        <a href="https://github.com/shafeeqahamedinfo/profile" target="_blank" aria-label="Github">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/shafeeqahamed-m-40b72a309" target="_blank" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://www.instagram.com/m_shafeeqahamed_sad/profilecard/" target="_blank" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="mailto:m.shafeeqahamed2004@gmail.com" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <ul class="footer-contact">
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:m.shafeeqahamed2004@gmail.com">m.shafeeqahamed2004@gmail.com</a>
-                        </li>
-                        <li>
-                            <i class="fab fa-github"></i>
-                            <a href="https://github.com/shafeeqahamedinfo/profile" target="_blank">github.com/shafeeqahamedinfo</a>
-                        </li>
-                        <li>
-                            <i class="fab fa-linkedin"></i>
-                            <a href="https://www.linkedin.com/in/shafeeqahamed-m-40b72a309" target="_blank">linkedin.com/in/shafeeqahamed-m</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
+        <section id="skills" class="section">
             <div class="container">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2025 Shafeeqahamed M. Made with <i class="fas fa-heart"></i> All rights reserved.</p>
-                    <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
-                        <i class="fas fa-chevron-up"></i>
-                    </button>
-                </div>
+                <h2>Skills</h2>
+                <p class="section-intro">My skills and my knowledge percentage for each.</p>
+                <div id="skillsGrid" class="grid reveal"></div>
             </div>
-        </div>
-    </footer>
-<script>// Theme Management
-const themeToggle = document.getElementById('theme-toggle');
-const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
-const body = document.body;
+        </section>
 
-// Check for saved theme preference or default to light mode
-const currentTheme = localStorage.getItem('theme') || 'light';
-body.setAttribute('data-theme', currentTheme);
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Projects</h2>
+                <p class="section-intro">Selected projects with description, tech stack, and links to live demos and
+                    source code.</p>
+                <div id="projectsGrid" class="grid reveal"></div>
+            </div>
+        </section>
 
-// Update theme toggle icons
-function updateThemeIcons() {
-    const isDark = body.getAttribute('data-theme') === 'dark';
-    const moonIcon = '<i class="fas fa-moon"></i>';
-    const sunIcon = '<i class="fas fa-sun"></i>';
-    
-    themeToggle.innerHTML = isDark ? sunIcon : moonIcon;
-    mobileThemeToggle.innerHTML = isDark ? sunIcon : moonIcon;
-}
+        <section id="certificates" class="section">
+            <div class="container">
+                <h2>Certificates</h2>
+                <p class="section-intro">Tap any certificate to open its full details and external verification link.
+                </p>
+                <div id="certificatesGrid" class="grid reveal"></div>
+            </div>
+        </section>
 
-// Initialize theme icons
-updateThemeIcons();
+        <section id="contact" class="section">
+            <div class="container contact-layout">
+                <article class="info-card reveal">
 
-// Theme toggle functionality
-function toggleTheme() {
-    const currentTheme = body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcons();
-}
+                    <ul class="info-list">
+                        <li class="info-list__heading">
+                            <h2>Contact</h2>
+                        </li>
+                        <li><strong>Email:</strong> <span id="contactEmail">youremail@gmail.com</span></li>
+                        <li><strong>Phone:</strong> <span id="contactPhone">+91 00000 00000</span></li>
+                        <li><strong>Location:</strong> <span id="contactLocation">Your City, Country</span></li>
+                        <li class="info-list__social">
+                            <div id="socialLinksContact" class="social-list">
+                                <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+                                <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+                <article class="form-card reveal">
+                    <h2>Send a Message</h2>
+                    <form id="contactForm" novalidate>
+                        <div class="form-grid">
+                            <div class="input-wrap">
+                                <label for="name">Name</label>
+                                <input id="name" name="name" type="text" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="phone">Phone</label>
+                                <input id="phone" name="phone" type="tel" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="subject">Subject</label>
+                                <input id="subject" name="subject" type="text" required />
+                            </div>
+                        </div>
+                        <div class="input-wrap">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit Message</button>
+                        <p id="formStatus" class="status" aria-live="polite"></p>
+                    </form>
+                </article>
+            </div>
+        </section>
+    </main>
 
-themeToggle.addEventListener('click', toggleTheme);
-mobileThemeToggle.addEventListener('click', toggleTheme);
 
-// Mobile Menu
-const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
 
-mobileMenuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-    const icon = mobileMenuToggle.querySelector('i');
-    icon.className = mobileMenu.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
-});
 
-// Close mobile menu when clicking on links
-const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-mobileMenuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        mobileMenuToggle.querySelector('i').className = 'fas fa-bars';
-    });
-});
-
-// Navbar scroll effect
-const navbar = document.getElementById('navbar');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Intersection Observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            
-            // Animate skill bars
-            if (entry.target.classList.contains('skill-item')) {
-                const progressBar = entry.target.querySelector('.skill-progress');
-                const level = progressBar.getAttribute('data-level');
-                setTimeout(() => {
-                    progressBar.style.width = level + '%';
-                }, 300);
-            }
-        }
-    });
-}, observerOptions);
-
-// Observe elements for animation
-document.querySelectorAll('.skill-item, .project-card, .contact-card, .about-content, .timeline-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-});
-
-// Contact Form
-const contactForm = document.getElementById('contact-form');
-const formStatus = document.getElementById('form-status');
-const submitBtn = document.getElementById('submit-btn');
-
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Show loading state
-    showFormStatus('loading', 'Sending your message...');
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<div class="loading-spinner"></div><span>Sending...</span>';
-    
-    try {
-        const formData = new FormData(contactForm);
-        
-        const response = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: formData
-        });
-        
-        const data = await response.json();
-        
-        if (data.success) {
-            showFormStatus('success', 'Thank you! Your message has been sent successfully. I\'ll get back to you soon!');
-            contactForm.reset();
-        } else {
-            console.log('Error', data);
-            showFormStatus('error', data.message || 'Sorry, there was an error sending your message. Please try again or contact me directly via email.');
-        }
-    } catch (error) {
-        console.error('Form submission error:', error);
-        showFormStatus('error', 'Sorry, there was an error sending your message. Please try again or contact me directly via email.');
-    }
-    
-    // Reset button state
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>Send Message</span>';
-    
-    // Clear status after 8 seconds
-    setTimeout(() => {
-        hideFormStatus();
-    }, 8000);
-});
-
-function showFormStatus(type, message) {
-    formStatus.className = `form-status ${type}`;
-    formStatus.innerHTML = `
-        ${type === 'loading' ? '<div class="loading-spinner"></div>' : 
-          type === 'success' ? '<i class="fas fa-check-circle"></i>' : 
-          '<i class="fas fa-exclamation-circle"></i>'}
-        <span>${message}</span>
-    `;
-    formStatus.style.display = 'flex';
-}
-
-function hideFormStatus() {
-    formStatus.style.display = 'none';
-}
-
-// Scroll to top functionality
-const scrollToTopBtn = document.getElementById('scroll-to-top');
-
-scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Show/hide scroll to top button
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollToTopBtn.style.opacity = '1';
-        scrollToTopBtn.style.visibility = 'visible';
-    } else {
-        scrollToTopBtn.style.opacity = '0';
-        scrollToTopBtn.style.visibility = 'hidden';
-    }
-});
-
-// Initialize scroll to top button
-scrollToTopBtn.style.transition = 'opacity 0.3s ease, visibility 0.3s ease';
-scrollToTopBtn.style.opacity = '0';
-scrollToTopBtn.style.visibility = 'hidden';
-
-// Typing animation for hero title (optional enhancement)
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
-}
-
-// Initialize typing animation on page load
-window.addEventListener('load', () => {
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        // Uncomment the line below to enable typing animation
-        // typeWriter(heroTitle, originalText, 50);
-    }
-});
-
-// Add loading animation to project cards
-document.querySelectorAll('.project-card').forEach((card, index) => {
-    card.style.animationDelay = `${index * 0.1}s`;
-});
-
-// Parallax effect for hero background shapes (subtle)
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const shapes = document.querySelectorAll('.hero-shape');
-    
-    shapes.forEach((shape, index) => {
-        const speed = 0.5 + (index * 0.1);
-        shape.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-});
-
-// Add hover effects to skill items
-document.querySelectorAll('.skill-item').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        item.style.transform = 'translateY(-5px)';
-    });
-    
-    item.addEventListener('mouseleave', () => {
-        item.style.transform = 'translateY(0)';
-    });
-});
-
-// Lazy loading for images
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src || img.src;
-                img.classList.remove('lazy');
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-    });
-}
-
-// Add active state to navigation links based on scroll position
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-    
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.clientHeight;
-        
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Add CSS for active navigation links
-const style = document.createElement('style');
-style.textContent = `
-    .nav-links a.active {
-        color: var(--primary-color) !important;
-        position: relative;
-    }
-    
-    .nav-links a.active::after {
-        content: '';
-        position: absolute;
-        bottom: -8px;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: var(--primary-color);
-        border-radius: 1px;
-    }
-`;
-document.head.appendChild(style);
-</script>
- <script type="text/javascript">
-// <![CDATA[
-var colour="lime"; // in addition to "random" can be set to any valid colour eg "#f0f" or "red"
-var sparkles=50;
-
-/****************************
-*  Tinkerbell Magic Sparkle *
-*(c)2005-13 mf2fm web-design*
-****************************/
-var x=ox=400;
-var y=oy=300;
-var swide=800;
-var shigh=600;
-var sleft=sdown=0;
-var tiny=new Array();
-var star=new Array();
-var starv=new Array();
-var starx=new Array();
-var stary=new Array();
-var tinyx=new Array();
-var tinyy=new Array();
-var tinyv=new Array();
-
-window.onload=function() { if (document.getElementById) {
-  var i, rats, rlef, rdow;
-  for (var i=0; i<sparkles; i++) {
-    var rats=createDiv(3, 3);
-    rats.style.visibility="hidden";
-    rats.style.zIndex="999";
-    document.body.appendChild(tiny[i]=rats);
-    starv[i]=0;
-    tinyv[i]=0;
-    var rats=createDiv(5, 5);
-    rats.style.backgroundColor="transparent";
-    rats.style.visibility="hidden";
-    rats.style.zIndex="999";
-    var rlef=createDiv(1, 5);
-    var rdow=createDiv(5, 1);
-    rats.appendChild(rlef);
-    rats.appendChild(rdow);
-    rlef.style.top="2px";
-    rlef.style.left="0px";
-    rdow.style.top="0px";
-    rdow.style.left="2px";
-    document.body.appendChild(star[i]=rats);
-  }
-  set_width();
-  sparkle();
-}}
-
-function sparkle() {
-  var c;
-  if (Math.abs(x-ox)>1 || Math.abs(y-oy)>1) {
-    ox=x;
-    oy=y;
-    for (c=0; c<sparkles; c++) if (!starv[c]) {
-      star[c].style.left=(starx[c]=x)+"px";
-      star[c].style.top=(stary[c]=y+1)+"px";
-      star[c].style.clip="rect(0px, 5px, 5px, 0px)";
-      star[c].childNodes[0].style.backgroundColor=star[c].childNodes[1].style.backgroundColor=(colour=="random")?newColour():colour;
-      star[c].style.visibility="visible";
-      starv[c]=50;
-      break;
-    }
-  }
-  for (c=0; c<sparkles; c++) {
-    if (starv[c]) update_star(c);
-    if (tinyv[c]) update_tiny(c);
-  }
-  setTimeout("sparkle()", 40);
-}
-
-function update_star(i) {
-  if (--starv[i]==25) star[i].style.clip="rect(1px, 4px, 4px, 1px)";
-  if (starv[i]) {
-    stary[i]+=1+Math.random()*3;
-    starx[i]+=(i%5-2)/5;
-    if (stary[i]<shigh+sdown) {
-      star[i].style.top=stary[i]+"px";
-      star[i].style.left=starx[i]+"px";
-    }
-    else {
-      star[i].style.visibility="hidden";
-      starv[i]=0;
-      return;
-    }
-  }
-  else {
-    tinyv[i]=50;
-    tiny[i].style.top=(tinyy[i]=stary[i])+"px";
-    tiny[i].style.left=(tinyx[i]=starx[i])+"px";
-    tiny[i].style.width="2px";
-    tiny[i].style.height="2px";
-    tiny[i].style.backgroundColor=star[i].childNodes[0].style.backgroundColor;
-    star[i].style.visibility="hidden";
-    tiny[i].style.visibility="visible"
-  }
-}
-
-function update_tiny(i) {
-  if (--tinyv[i]==25) {
-    tiny[i].style.width="1px";
-    tiny[i].style.height="1px";
-  }
-  if (tinyv[i]) {
-    tinyy[i]+=1+Math.random()*3;
-    tinyx[i]+=(i%5-2)/5;
-    if (tinyy[i]<shigh+sdown) {
-      tiny[i].style.top=tinyy[i]+"px";
-      tiny[i].style.left=tinyx[i]+"px";
-    }
-    else {
-      tiny[i].style.visibility="hidden";
-      tinyv[i]=0;
-      return;
-    }
-  }
-  else tiny[i].style.visibility="hidden";
-}
-
-document.onmousemove=mouse;
-function mouse(e) {
-  if (e) {
-    y=e.pageY;
-    x=e.pageX;
-  }
-  else {
-    set_scroll();
-    y=event.y+sdown;
-    x=event.x+sleft;
-  }
-}
-
-window.onscroll=set_scroll;
-function set_scroll() {
-  if (typeof(self.pageYOffset)=='number') {
-    sdown=self.pageYOffset;
-    sleft=self.pageXOffset;
-  }
-  else if (document.body && (document.body.scrollTop || document.body.scrollLeft)) {
-    sdown=document.body.scrollTop;
-    sleft=document.body.scrollLeft;
-  }
-  else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
-    sleft=document.documentElement.scrollLeft;
-    sdown=document.documentElement.scrollTop;
-  }
-  else {
-    sdown=0;
-    sleft=0;
-  }
-}
-
-window.onresize=set_width;
-function set_width() {
-  var sw_min=999999;
-  var sh_min=999999;
-  if (document.documentElement && document.documentElement.clientWidth) {
-    if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
-    if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
-  }
-  if (typeof(self.innerWidth)=='number' && self.innerWidth) {
-    if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
-    if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
-  }
-  if (document.body.clientWidth) {
-    if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
-    if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
-  }
-  if (sw_min==999999 || sh_min==999999) {
-    sw_min=800;
-    sh_min=600;
-  }
-  swide=sw_min;
-  shigh=sh_min;
-}
-
-function createDiv(height, width) {
-  var div=document.createElement("div");
-  div.style.position="absolute";
-  div.style.height=height+"px";
-  div.style.width=width+"px";
-  div.style.overflow="hidden";
-  return (div);
-}
-
-function newColour() {
-  var c=new Array();
-  c[0]=255;
-  c[1]=Math.floor(Math.random()*256);
-  c[2]=Math.floor(Math.random()*(256-c[1]/2));
-  c.sort(function(){return (0.5 - Math.random());});
-  return ("rgb("+c[0]+", "+c[1]+", "+c[2]+")");
-}
-
-</script>
-    
+    <script type="module" src="assets/js/main.js"></script>
 </body>
-</html>
 
+</html>

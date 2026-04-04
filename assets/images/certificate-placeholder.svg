@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+  <title id="title">Certificate Placeholder</title>
+  <desc id="desc">Certificate layout placeholder image.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="850" fill="#0f172a"/>
+  <rect x="80" y="80" width="1040" height="690" rx="28" fill="url(#bg)"/>
+  <rect x="140" y="150" width="920" height="90" rx="18" fill="#0e7490" opacity="0.2"/>
+  <rect x="220" y="320" width="760" height="22" rx="11" fill="#64748b"/>
+  <rect x="220" y="370" width="640" height="22" rx="11" fill="#94a3b8"/>
+  <rect x="220" y="420" width="700" height="22" rx="11" fill="#94a3b8"/>
+  <circle cx="950" cy="620" r="72" fill="#f59e0b" opacity="0.75"/>
+  <text x="600" y="220" fill="#0f172a" font-size="52" text-anchor="middle" font-family="Segoe UI, sans-serif">Certificate</text>
+</svg>

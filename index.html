@@ -33,16 +33,26 @@
             crossorigin="anonymous" referrerpolicy="no-referrer" />
     </noscript>
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <script>
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-});
-</script>
-    <script>
+   <script>
 document.addEventListener('keydown', function(e) {
-    if (e.key === 'F12' ||
-        (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+
+    // Block Ctrl+U (View Source)
+    if (e.ctrlKey && e.key.toLowerCase() === 'u') {
         e.preventDefault();
+        return false;
+    }
+
+    // Block F12
+    if (e.key === 'F12') {
+        e.preventDefault();
+        return false;
+    }
+
+    // Block Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+    if (e.ctrlKey && e.shiftKey &&
+        ['i', 'j', 'c'].includes(e.key.toLowerCase())) {
+        e.preventDefault();
+        return false;
     }
 });
 </script>

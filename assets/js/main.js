@@ -1,6 +1,29 @@
 import { getPortfolioData, saveContactMessage } from "./dataService.js";
 import { renderSkills } from "./skillRenderer.js";
 
+// Mobile menu toggle
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener("click", () => {
+    const isActive = hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+    document.body.style.overflow = isActive ? "hidden" : "auto";
+    hamburger.setAttribute("aria-expanded", isActive);
+  });
+
+  // Close menu when a link is clicked
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navLinks.classList.remove("active");
+      document.body.style.overflow = "auto";
+      hamburger.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
 function getEl(id) {
   return document.getElementById(id);
 }

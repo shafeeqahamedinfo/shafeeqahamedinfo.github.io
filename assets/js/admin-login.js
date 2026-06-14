@@ -31,7 +31,7 @@ if (!IS_SUPABASE_CONFIGURED || !supabase) {
 } else {
   const { data } = await supabase.auth.getSession();
   if (data.session) {
-    window.location.href = "admin.html";
+    window.location.href = "admin/admin.html";
   }
 }
 
@@ -84,7 +84,7 @@ if (createAdminBtn) {
     const loginResult = await supabase.auth.signInWithPassword({ email, password });
     if (!loginResult.error) {
       statusEl.textContent = "Admin account created and logged in. Redirecting...";
-      window.location.href = "admin.html";
+      window.location.href = "admin/admin/admin.html";
       return;
     }
 

@@ -7,9 +7,8 @@
     <meta name="google-site-verification" content="tPDEEIM07uCY6uw4BFG9kpHrJu0hHAsqkiKpwEUIcqI" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShafeeqAhamed M Portfolio</title>
-    <meta name="google-site-verification" content="hSOqNk-DcUxr4Qm7s7BedSXdNd16fRdUaFH-PpVyALU" />
-    <meta name="description" content="Shafeeq Ahamed M - B.E. CSE student at Annamalai University. Passionate about web development, software engineering, and creative tech projects.">
+    <title>Skills - ShafeeqAhamed M Portfolio</title>
+    <meta name="description" content="Skills - Shafeeq Ahamed M. Technical skills, tools, and expertise.">
     <meta name="author" content="ShafeeqAhamed M">
     <link rel="icon" href="shafeeq.jpeg" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -166,8 +165,6 @@ document.addEventListener('keydown', function(e) {
         })();
     </script>
 
-
-
     <header class="site-header site-header--bottom">
         <div class="container">
             <nav class="main-nav" style="background-color: black;">
@@ -176,7 +173,7 @@ document.addEventListener('keydown', function(e) {
                     <span></span>
                     <span></span>
                 </button>
-                <div class="nav-links" id="navLinks">
+               <div class="nav-links" id="navLinks">
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
                     <a href="skill.html">Skills</a>
@@ -189,30 +186,58 @@ document.addEventListener('keydown', function(e) {
     </header>
 
     <main>
-        <section id="home" class="container hero reveal">
-            <article class="hero-card"
-                style="background-image: url('25416.png'); background-size: cover; background-position: center; background-repeat: no-repeat; ">
-                <br><br><br>
-                <h1 id="heroName" class="hero-title">Hi, I am <span>Your Name</span></h1>
+     <section id="contact" class="section">
+            <div class="container contact-layout">
+                <article class="info-card reveal">
 
-                <p id="heroIntro" class="hero-subtitle" style="color: rgb(255, 252, 252);">
-                    I build modern web experiences with scalable backends and clean user interfaces.
-                </p>
-                <div class="hero-actions">
-                    <a class="btn btn-primary" href="#projects">See My Work</a>
-                    <a class="btn btn-secondary" href="#contact">Contact Me</a>
-                </div>
-                <div id="socialLinks" class="social-list">
-                    <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                </div>
-            </article><br><br>
+                    <ul class="info-list">
+                        <li class="info-list__heading">
+                            <h2>Contact</h2>
+                        </li>
+                        <li><strong>Email:</strong> <span id="contactEmail">youremail@gmail.com</span></li>
+                        <li><strong>Phone:</strong> <span id="contactPhone">+91 00000 00000</span></li>
+                        <li><strong>Location:</strong> <span id="contactLocation">Your City, Country</span></li>
+                        <li class="info-list__social">
+                            <div id="socialLinksContact" class="social-list">
+                                <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+                                <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+                <article class="form-card reveal">
+                    <h2>Send a Message</h2>
+                    <form id="contactForm" novalidate>
+                        <div class="form-grid">
+                            <div class="input-wrap">
+                                <label for="name">Name</label>
+                                <input id="name" name="name" type="text" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="phone">Phone</label>
+                                <input id="phone" name="phone" type="tel" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="subject">Subject</label>
+                                <input id="subject" name="subject" type="text" required />
+                            </div>
+                        </div>
+                        <div class="input-wrap">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit Message</button>
+                        <p id="formStatus" class="status" aria-live="polite"></p>
+                    </form>
+                </article>
+            </div>
         </section>
     </main>
-
-
-
 
     <script type="module" src="assets/js/main.js"></script>
 </body>

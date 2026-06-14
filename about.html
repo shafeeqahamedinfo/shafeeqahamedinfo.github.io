@@ -1,6 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -61,7 +60,6 @@ document.addEventListener('keydown', function(e) {
     }
 });
 </script>
-</head>
 
 <body class="bottom-nav">
 
@@ -165,8 +163,109 @@ document.addEventListener('keydown', function(e) {
             }
         })();
     </script>
+</head>
+<body class="bottom-nav">
 
+    <canvas id="Matrix" class="matrix-canvas" aria-hidden="true"></canvas>
+    <script>
+        (() => {
+            const canvas = document.getElementById("Matrix");
+            if (!canvas) return;
 
+            const context = canvas.getContext("2d");
+            if (!context) return;
+
+            const prefersReducedMotion = window.matchMedia
+                ? window.matchMedia("(prefers-reduced-motion: reduce)")
+                : null;
+            if (prefersReducedMotion?.matches) return;
+
+            const katakana =
+                "";
+            const latin = "SHAFEEQAHAMED M";
+            const nums = "+91 8489481039";
+            const alphabet = katakana + latin + nums;
+
+            const fontSize = 16;
+            let columns = 0;
+            let rainDrops = [];
+
+            let rafId = 0;
+            let running = false;
+            let lastFrameMs = 0;
+            const frameIntervalMs = 33; // ~30fps
+
+            const resizeCanvas = () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                columns = Math.floor(canvas.width / fontSize);
+                rainDrops = new Array(columns).fill(1);
+            };
+
+            const draw = (now) => {
+                if (!running) return;
+                rafId = requestAnimationFrame(draw);
+                if (now - lastFrameMs < frameIntervalMs) return;
+                lastFrameMs = now;
+
+                context.fillStyle = "rgba(0, 0, 0, 0.05)";
+                context.fillRect(0, 0, canvas.width, canvas.height);
+
+                context.fillStyle = "rgb(241, 239, 247)";
+                context.font = `${fontSize}px monospace`;
+
+                for (let i = 0; i < rainDrops.length; i += 1) {
+                    const text = alphabet.charAt((Math.random() * alphabet.length) | 0);
+                    context.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+
+                    if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        rainDrops[i] = 0;
+                    }
+                    rainDrops[i] += 1;
+                }
+            };
+
+            const start = () => {
+                if (running) return;
+                if (document.hidden) return;
+                if (prefersReducedMotion?.matches) return;
+                running = true;
+                lastFrameMs = performance.now();
+                rafId = requestAnimationFrame(draw);
+            };
+
+            const stop = () => {
+                running = false;
+                if (rafId) cancelAnimationFrame(rafId);
+                rafId = 0;
+            };
+
+            resizeCanvas();
+            window.addEventListener("resize", resizeCanvas, { passive: true });
+            document.addEventListener("visibilitychange", () => {
+                if (document.hidden) stop();
+                else start();
+            });
+
+            if (prefersReducedMotion) {
+                const handler = () => {
+                    if (prefersReducedMotion.matches) stop();
+                    else start();
+                };
+                if (typeof prefersReducedMotion.addEventListener === "function") {
+                    prefersReducedMotion.addEventListener("change", handler);
+                } else if (typeof prefersReducedMotion.addListener === "function") {
+                    prefersReducedMotion.addListener(handler);
+                }
+            }
+
+            if ("requestIdleCallback" in window) {
+                requestIdleCallback(start, { timeout: 1500 });
+            } else {
+                setTimeout(start, 0);
+            }
+        })();
+    </script>
 
     <header class="site-header site-header--bottom">
         <div class="container">
@@ -179,7 +278,7 @@ document.addEventListener('keydown', function(e) {
                 <div class="nav-links" id="navLinks">
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
-                    <a href="skill.html">Skills</a>
+                    <a href="skills.html">Skills</a>
                     <a href="projects.html">Projects</a>
                     <a href="certificates.html">Certificates</a>
                     <a href="contact.html">Contact</a>
@@ -189,32 +288,29 @@ document.addEventListener('keydown', function(e) {
     </header>
 
     <main>
-        <section id="home" class="container hero reveal">
-            <article class="hero-card"
-                style="background-image: url('25416.png'); background-size: cover; background-position: center; background-repeat: no-repeat; ">
-                <br><br><br>
-                <h1 id="heroName" class="hero-title">Hi, I am <span>Your Name</span></h1>
+    <section id="about" class="section">
+            <div class="container about-layout">
+                <article class="info-card reveal">
+                    <img id="profileImageAbout" class="profile-img" src="assets/images/profile-placeholder.svg"
+                        loading="lazy" alt="Profile image" />
+                     <h3>Experience</h3>
+                    <ul id="experienceTimeline" class="timeline"></ul>
+                </article>
+                <article class="info-card reveal">
+                    <h2>About Me</h2>
+                    <p id="aboutText" class="section-intro">
+                        I am a passionate developer focused on creating performant, accessible, and user-focused
+                        applications.
+                    </p>
+                    <h3>Education</h3>
+                    <ul id="educationTimeline" class="timeline"></ul>
 
-                <p id="heroIntro" class="hero-subtitle" style="color: rgb(255, 252, 252);">
-                    I build modern web experiences with scalable backends and clean user interfaces.
-                </p>
-                <div class="hero-actions">
-                    <a class="btn btn-primary" href="#projects">See My Work</a>
-                    <a class="btn btn-secondary" href="#contact">Contact Me</a>
-                </div>
-                <div id="socialLinks" class="social-list">
-                    <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                </div>
-            </article><br><br>
+                   
+                </article>
+            </div>
         </section>
     </main>
 
-
-
-
     <script type="module" src="assets/js/main.js"></script>
 </body>
-
 </html>

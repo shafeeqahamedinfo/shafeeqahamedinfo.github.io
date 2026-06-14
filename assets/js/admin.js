@@ -9,16 +9,15 @@ const panels = document.querySelectorAll("[data-panel]");
 const aboutForm = document.getElementById("aboutForm");
 const educationForm = document.getElementById("educationForm");
 const experienceForm = document.getElementById("experienceForm");
-const skillForm = document.getElementById("skillForm");
 const projectForm = document.getElementById("projectForm");
 const certificateForm = document.getElementById("certificateForm");
 
 const aboutStatus = document.getElementById("aboutStatus");
 const educationStatus = document.getElementById("educationStatus");
 const experienceStatus = document.getElementById("experienceStatus");
-const skillStatus = document.getElementById("skillStatus");
 const projectStatus = document.getElementById("projectStatus");
 const certificateStatus = document.getElementById("certificateStatus");
+const skillStatus = document.getElementById("skillStatus");
 
 const educationTableBody = document.getElementById("educationTableBody");
 const experienceTableBody = document.getElementById("experienceTableBody");
@@ -32,28 +31,24 @@ const uploadCertificateImageBtn = document.getElementById("uploadCertificateImag
 const uploadAboutImageBtn = document.getElementById("uploadAboutImageBtn");
 const uploadEducationImageBtn = document.getElementById("uploadEducationImageBtn");
 const uploadExperienceLogoBtn = document.getElementById("uploadExperienceLogoBtn");
-const uploadSkillImageBtn = document.getElementById("uploadSkillImageBtn");
 const removeProjectImageBtn = document.getElementById("removeProjectImageBtn");
 const removeCertificateImageBtn = document.getElementById("removeCertificateImageBtn");
 const removeAboutImageBtn = document.getElementById("removeAboutImageBtn");
 const removeEducationImageBtn = document.getElementById("removeEducationImageBtn");
 const removeExperienceLogoBtn = document.getElementById("removeExperienceLogoBtn");
-const removeSkillImageBtn = document.getElementById("removeSkillImageBtn");
 const projectImageUploadInput = document.getElementById("projectImageUpload");
 const certificateImageUploadInput = document.getElementById("certificateImageUpload");
 const aboutImageUploadInput = document.getElementById("aboutImageUpload");
 const educationImageUploadInput = document.getElementById("educationImageUpload");
 const experienceLogoUploadInput = document.getElementById("experienceLogoUpload");
-const skillImageUploadInput = document.getElementById("skillImageUpload");
 const aboutImagePreview = document.getElementById("aboutImagePreview");
 const projectImagePreview = document.getElementById("projectImagePreview");
 const projectImagesGallery = document.getElementById("projectImagesGallery");
 const certificateImagePreview = document.getElementById("certificateImagePreview");
 const educationImagePreview = document.getElementById("educationImagePreview");
 const experienceLogoPreview = document.getElementById("experienceLogoPreview");
-const skillImagePreview = document.getElementById("skillImagePreview");
+const skillForm = document.getElementById("skillForm");
 const logoutBtn = document.getElementById("logoutBtn");
-const skillProjectIdsHelp = document.getElementById("skillProjectIdsHelp");
 
 const PORTFOLIO_CACHE_KEY = "portfolio_cache_v2";
 
@@ -66,9 +61,7 @@ console.log("Upload elements check:", {
   uploadCertificateImageBtn: !!uploadCertificateImageBtn,
   certificateImageUploadInput: !!certificateImageUploadInput,
   uploadEducationImageBtn: !!uploadEducationImageBtn,
-  educationImageUploadInput: !!educationImageUploadInput,
-  uploadSkillImageBtn: !!uploadSkillImageBtn,
-  skillImageUploadInput: !!skillImageUploadInput
+  educationImageUploadInput: !!educationImageUploadInput
 });
 
 let cache = {
@@ -186,7 +179,6 @@ function syncImageButtons() {
   if (experienceForm) {
     setRemoveButtonVisibility(removeExperienceLogoBtn, !!String(experienceForm.elements.logo_url?.value || "").trim());
   }
-  setRemoveButtonVisibility(removeSkillImageBtn, !!String(skillForm.elements.image_url.value || "").trim());
   setRemoveButtonVisibility(removeProjectImageBtn, !!firstValue(projectForm.elements.images.value));
   setRemoveButtonVisibility(removeCertificateImageBtn, !!String(certificateForm.elements.image_url.value || "").trim());
   renderProjectImagesGallery();
@@ -303,30 +295,6 @@ function renderExperienceTable() {
   });
 }
 
-function renderSkillsTable() {
-  skillsTableBody.innerHTML = "";
-
-  if (!cache.skills.length) {
-    skillsTableBody.innerHTML = '<tr><td colspan="3">No skills found.</td></tr>';
-    return;
-  }
-
-  cache.skills.forEach((item) => {
-    const percentRaw = Number(item.knowledge_percent);
-    const percent = Number.isFinite(percentRaw) ? Math.min(100, Math.max(0, Math.round(percentRaw))) : 0;
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${item.title || ""}</td>
-      <td>${percent}%</td>
-      <td>
-        <button class="action-btn edit" data-type="skills" data-id="${item.id}">Edit</button>
-        <button class="action-btn delete" data-type="skills" data-id="${item.id}">Delete</button>
-      </td>
-    `;
-    skillsTableBody.appendChild(tr);
-  });
-}
-
 function renderProjectsTable() {
   projectsTableBody.innerHTML = "";
 
@@ -346,6 +314,29 @@ function renderProjectsTable() {
       </td>
     `;
     projectsTableBody.appendChild(tr);
+  });
+}
+
+function renderSkillsTable() {
+  if (!skillsTableBody) return;
+  skillsTableBody.innerHTML = "";
+
+  if (!cache.skills.length) {
+    skillsTableBody.innerHTML = '<tr><td colspan="3">No skills found.</td></tr>';
+    return;
+  }
+
+  cache.skills.forEach((item) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${item.title || ""}</td>
+      <td>${item.knowledge_percent !== undefined && item.knowledge_percent !== null ? item.knowledge_percent : ""}</td>
+      <td>
+        <button class="action-btn edit" data-type="skills" data-id="${item.id}">Edit</button>
+        <button class="action-btn delete" data-type="skills" data-id="${item.id}">Delete</button>
+      </td>
+    `;
+    skillsTableBody.appendChild(tr);
   });
 }
 
@@ -464,22 +455,9 @@ function editRecord(type, id) {
     if (!item) return;
     skillForm.elements.id.value = item.id;
     skillForm.elements.title.value = item.title || "";
-    skillForm.elements.icon.value = item.icon || "";
     skillForm.elements.knowledge_percent.value = Number.isFinite(Number(item.knowledge_percent))
       ? Math.min(100, Math.max(0, Math.round(Number(item.knowledge_percent))))
       : 0;
-    skillForm.elements.summary.value = item.summary || "";
-    skillForm.elements.details.value = item.details || "";
-    skillForm.elements.tools.value = Array.isArray(item.tools) ? item.tools.join(", ") : "";
-    skillForm.elements.project_ids.value = Array.isArray(item.project_ids) ? item.project_ids.join(", ") : "";
-    const displayOrderRaw = Number(item.display_order);
-    const displayOrder = Number.isFinite(displayOrderRaw)
-      ? Math.min(10, Math.max(1, Math.round(displayOrderRaw)))
-      : 1;
-    skillForm.elements.display_order.value = displayOrder;
-    skillForm.elements.image_url.value = item.image_url || "";
-    setPreview(skillImagePreview, skillForm.elements.image_url.value, "assets/images/project-placeholder.svg");
-    syncImageButtons();
     switchTab("skills");
   }
 
@@ -560,7 +538,7 @@ async function uploadImage(file, folder) {
 }
 
 async function loadDashboardData() {
-  const [aboutRes, educationRes, experienceRes, skillsRes, projectsRes, certificatesRes, messagesRes] = await Promise.all([
+  const [aboutRes, educationRes, experienceRes, projectsRes, certificatesRes, skillsRes, messagesRes] = await Promise.all([
     supabase.from("site_settings").select("*").limit(1).maybeSingle(),
     safeSelectWithOptionalOrder("education", [
       { column: "year_start", ascending: true },
@@ -572,17 +550,17 @@ async function loadDashboardData() {
       { column: "created_at", ascending: false },
       { column: "id", ascending: false }
     ]),
-    safeSelectWithOptionalOrder("skills", [
-      { column: "display_order", ascending: true },
-      { column: "created_at", ascending: false },
-      { column: "id", ascending: false }
-    ]),
     safeSelectWithOptionalOrder("projects", [
       { column: "created_at", ascending: false },
       { column: "id", ascending: false }
     ]),
     safeSelectWithOptionalOrder("certificates", [
       { column: "issued_on", ascending: false },
+      { column: "created_at", ascending: false },
+      { column: "id", ascending: false }
+    ]),
+    safeSelectWithOptionalOrder("skills", [
+      { column: "display_order", ascending: true },
       { column: "created_at", ascending: false },
       { column: "id", ascending: false }
     ]),
@@ -625,17 +603,6 @@ async function loadDashboardData() {
     mapFn: (data) => data || []
   });
 
-  applyResult(skillsRes, {
-    key: "skills",
-    statusEl: skillStatus,
-    label: "Skills",
-    mapFn: (data) => (data || []).map((item) => ({
-      ...item,
-      tools: Array.isArray(item.tools) ? item.tools : [],
-      project_ids: Array.isArray(item.project_ids) ? item.project_ids : []
-    }))
-  });
-
   applyResult(projectsRes, {
     key: "projects",
     statusEl: projectStatus,
@@ -654,6 +621,18 @@ async function loadDashboardData() {
     mapFn: (data) => data || []
   });
 
+  applyResult(skillsRes, {
+    key: "skills",
+    statusEl: skillStatus,
+    label: "Skills",
+    mapFn: (data) => (data || []).map((item) => ({
+      ...item,
+      tools: Array.isArray(item.tools) ? item.tools : [],
+      project_ids: Array.isArray(item.project_ids) ? item.project_ids : [],
+      knowledge_percent: Number.isFinite(Number(item.knowledge_percent)) ? Number(item.knowledge_percent) : null
+    }))
+  });
+
   applyResult(messagesRes, {
     key: "messages",
     statusEl: null,
@@ -664,20 +643,10 @@ async function loadDashboardData() {
   fillAboutForm();
   renderEducationTable();
   renderExperienceTable();
-  renderSkillsTable();
   renderProjectsTable();
   renderCertificatesTable();
+  renderSkillsTable();
   renderMessagesTable();
-
-  if (skillProjectIdsHelp) {
-    const projects = Array.isArray(cache.projects) ? cache.projects : [];
-    skillProjectIdsHelp.textContent = projects.length
-      ? `Available projects: ${projects
-        .slice(0, 10)
-        .map((project) => `${project.id}=${project.title || "(untitled)"}`)
-        .join(" | ")}`
-      : "No projects loaded yet.";
-  }
 
   syncPublicPortfolioCache();
 }
@@ -714,6 +683,33 @@ async function saveAboutSection(successMessage = "About section updated successf
   await loadDashboardData();
   return true;
 }
+
+skillForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const formData = new FormData(skillForm);
+  const id = formData.get("id");
+  const payload = {
+    title: String(formData.get("title") || "").trim(),
+    knowledge_percent: formData.get("knowledge_percent") ? Number(formData.get("knowledge_percent")) : null,
+    summary: "",
+    details: ""
+  };
+
+  const query = id
+    ? supabase.from("skills").update(payload).eq("id", Number(id))
+    : supabase.from("skills").insert(payload);
+
+  const { error } = await query;
+  if (error) {
+    setStatus(skillStatus, `Failed to save skill: ${error.message}`, true);
+    return;
+  }
+
+  skillForm.reset();
+  skillForm.elements.id.value = "";
+  setStatus(skillStatus, "Skill saved.");
+  await loadDashboardData();
+});
 
 educationForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -837,57 +833,6 @@ if (experienceForm) {
   });
 }
 
-skillForm.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  const formData = new FormData(skillForm);
-
-  const id = formData.get("id");
-  const title = String(formData.get("title") || "").trim();
-  const percentRaw = Number(formData.get("knowledge_percent"));
-  const knowledgePercent = Number.isFinite(percentRaw) ? Math.min(100, Math.max(0, Math.round(percentRaw))) : 0;
-
-  const displayOrderRaw = Number(formData.get("display_order"));
-  const displayOrder = Number.isFinite(displayOrderRaw)
-    ? Math.min(10, Math.max(1, Math.round(displayOrderRaw)))
-    : 1;
-
-  // Keep DB compatibility by auto-filling missing fields when left blank.
-  const summaryValue = String(formData.get("summary") || "").trim() || title;
-  const detailsValue = String(formData.get("details") || "").trim() || `Knowledge: ${knowledgePercent}%`;
-
-  const payload = {
-    title,
-    icon: String(formData.get("icon") || ""),
-    knowledge_percent: knowledgePercent,
-    summary: summaryValue,
-    details: detailsValue,
-    tools: parseCSV(formData.get("tools")),
-    project_ids: parseCSV(formData.get("project_ids")).map((item) => Number(item)),
-    display_order: displayOrder,
-    image_url: String(formData.get("image_url") || "")
-  };
-
-  const query = id
-    ? supabase.from("skills").update(payload).eq("id", Number(id))
-    : supabase.from("skills").insert(payload);
-
-  const { error } = await query;
-  if (error) {
-    setStatus(skillStatus, `Failed to save skill: ${error.message}`, true);
-    return;
-  }
-
-  skillForm.reset();
-  skillForm.elements.id.value = "";
-  skillForm.elements.display_order.value = 1;
-  skillForm.elements.knowledge_percent.value = 0;
-  skillForm.elements.image_url.value = "";
-  setPreview(skillImagePreview, "", "assets/images/project-placeholder.svg");
-  syncImageButtons();
-  setStatus(skillStatus, "Skill saved.");
-  await loadDashboardData();
-});
-
 if (uploadEducationImageBtn && educationImageUploadInput) {
   uploadEducationImageBtn.addEventListener("click", async () => {
     const file = educationImageUploadInput.files?.[0];
@@ -949,38 +894,6 @@ if (removeExperienceLogoBtn && experienceForm) {
     setPreview(experienceLogoPreview, "", "assets/images/project-placeholder.svg");
     syncImageButtons();
     setStatus(experienceStatus, "Experience logo removed. Click Save Experience to apply.");
-  });
-}
-
-if (uploadSkillImageBtn && skillImageUploadInput) {
-  uploadSkillImageBtn.addEventListener("click", async () => {
-    const file = skillImageUploadInput.files?.[0];
-    if (!file) {
-      setStatus(skillStatus, "Choose an image before uploading.", true);
-      return;
-    }
-
-    try {
-      setStatus(skillStatus, "Uploading skill image...");
-      const publicUrl = await uploadImage(file, "skills");
-      skillForm.elements.image_url.value = publicUrl;
-      setPreview(skillImagePreview, publicUrl, "assets/images/project-placeholder.svg");
-      syncImageButtons();
-      setStatus(skillStatus, "Image uploaded and skill updated.");
-      skillImageUploadInput.value = "";
-    } catch (error) {
-      setStatus(skillStatus, `Image upload failed: ${error.message}`, true);
-    }
-  });
-}
-
-if (removeSkillImageBtn) {
-  removeSkillImageBtn.addEventListener("click", () => {
-    skillForm.elements.image_url.value = "";
-    skillImageUploadInput.value = "";
-    setPreview(skillImagePreview, "", "assets/images/project-placeholder.svg");
-    syncImageButtons();
-    setStatus(skillStatus, "Skill image removed. Click Save Skill to apply.");
   });
 }
 
@@ -1073,6 +986,14 @@ if (uploadProjectImageBtn && projectImageUploadInput) {
     } catch (error) {
       setStatus(projectStatus, `Image upload failed: ${error.message}`, true);
     }
+  });
+}
+
+if (removeProjectImageBtn) {
+  removeProjectImageBtn.addEventListener("click", () => {
+    updateProjectImages([]);
+    projectImageUploadInput.value = "";
+    setStatus(projectStatus, "Project image removed. Click Save Project to apply.");
   });
 }
 

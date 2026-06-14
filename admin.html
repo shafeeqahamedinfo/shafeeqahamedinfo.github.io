@@ -230,65 +230,16 @@
                     <h2>Skills</h2>
                     <form id="skillForm">
                         <input type="hidden" name="id" />
-                        <input id="skillImageUrl" name="image_url" type="hidden" />
                         <div class="form-grid">
                             <div class="input-wrap">
-                                <label for="skillTitle">Title</label>
+                                <label for="skillTitle">Name</label>
                                 <input id="skillTitle" name="title" type="text" required />
                             </div>
-
                             <div class="input-wrap">
-                                <label for="skillIcon">Icon (emoji or text)</label>
-                                <input id="skillIcon" name="icon" type="text" placeholder="⚡" />
-                            </div>
-
-                            <div class="input-wrap">
-                                <label for="skillPercent">Knowledge %</label>
-                                <input id="skillPercent" name="knowledge_percent" type="number" min="0" max="100"
-                                    value="0" />
-                            </div>
-                            <div class="input-wrap">
-                                <label for="skillOrder">Display Order (1-10)</label>
-                                <input id="skillOrder" name="display_order" type="number" min="1" max="10" value="1" />
+                                <label for="skillKnowledge">Percent</label>
+                                <input id="skillKnowledge" name="knowledge_percent" type="number" min="0" max="100" required />
                             </div>
                         </div>
-
-                        <div class="input-wrap">
-                            <label for="skillSummary">Summary</label>
-                            <input id="skillSummary" name="summary" type="text" placeholder="Short one-line summary" />
-                        </div>
-
-                        <div class="input-wrap">
-                            <label for="skillDetails">Details</label>
-                            <textarea id="skillDetails" name="details"
-                                placeholder="Explain your skill in more detail"></textarea>
-                        </div>
-
-                        <div class="form-grid">
-                            <div class="input-wrap">
-                                <label for="skillTools">Tools (comma separated)</label>
-                                <input id="skillTools" name="tools" type="text" placeholder="React, Node.js, Git" />
-                            </div>
-                            <div class="input-wrap">
-                                <label for="skillProjectIds">Project IDs (comma separated)</label>
-                                <input id="skillProjectIds" name="project_ids" type="text" placeholder="1, 2, 3" />
-                                <p id="skillProjectIdsHelp" class="section-intro" style="margin-top: 0.5rem;"></p>
-                            </div>
-                        </div>
-
-                        <div class="input-wrap">
-                            <label for="skillImageUpload">Upload Skill Image</label>
-                            <input id="skillImageUpload" name="skillImageUpload" type="file" accept="image/*" />
-                            <div class="upload-actions">
-                                <button class="btn btn-secondary" id="uploadSkillImageBtn" type="button">Upload and set
-                                    image</button>
-                                <button class="btn btn-secondary" id="removeSkillImageBtn" type="button">Remove
-                                    image</button>
-                            </div>
-                            <img id="skillImagePreview" class="upload-preview"
-                                src="assets/images/project-placeholder.svg" alt="Skill preview" />
-                        </div>
-
                         <button class="btn btn-primary" type="submit">Save Skill</button>
                     </form>
                     <p id="skillStatus" class="status"></p>
@@ -296,8 +247,8 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Title</th>
-                                    <th>Knowledge %</th>
+                                    <th>Name</th>
+                                    <th>Percent</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>

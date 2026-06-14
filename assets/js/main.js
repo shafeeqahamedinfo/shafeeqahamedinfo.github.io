@@ -1,4 +1,5 @@
 import { getPortfolioData, saveContactMessage } from "./dataService.js";
+import { renderSkills } from "./skillRenderer.js";
 
 function getEl(id) {
   return document.getElementById(id);
@@ -213,42 +214,6 @@ function renderExperience(experience) {
   });
 
   timeline.appendChild(fragment);
-}
-
-function renderSkills(skills) {
-  const grid = getEl("skillsGrid");
-  if (!grid) return;
-  grid.replaceChildren();
-
-  if (!skills.length) {
-    const empty = document.createElement("div");
-    empty.className = "empty";
-    empty.textContent = "No skills available yet.";
-    grid.appendChild(empty);
-    return;
-  }
-
-  const fragment = document.createDocumentFragment();
-  skills.forEach((skill) => {
-    const card = document.createElement("a");
-    card.href = `skill.html?id=${skill.id}`;
-    card.className = "card";
-
-    const percent = Number.isFinite(Number(skill.knowledge_percent))
-      ? Math.min(100, Math.max(0, Math.round(Number(skill.knowledge_percent))))
-      : 0;
-
-    const title = document.createElement("h3");
-    title.textContent = skill.title || "";
-    const small = document.createElement("small");
-    small.textContent = `Knowledge: ${percent}%`;
-    card.appendChild(title);
-    card.appendChild(small);
-
-    fragment.appendChild(card);
-  });
-
-  grid.appendChild(fragment);
 }
 
 function renderProjects(projects) {

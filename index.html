@@ -171,18 +171,13 @@ document.addEventListener('keydown', function(e) {
     <header class="site-header site-header--bottom">
         <div class="container">
             <nav class="main-nav" style="background-color: black;">
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <div class="nav-links" id="navLinks">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="skill.html">Skills</a>
-                    <a href="projects.html">Projects</a>
-                    <a href="certificates.html">Certificates</a>
-                    <a href="contact.html">Contact</a>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#certificates">Certificates</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </nav>
         </div>
@@ -208,6 +203,108 @@ document.addEventListener('keydown', function(e) {
                     <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
             </article><br><br>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container about-layout">
+                <article class="info-card reveal">
+                    <img id="profileImageAbout" class="profile-img" src="assets/images/profile-placeholder.svg"
+                        loading="lazy" alt="Profile image" />
+                     <h3>Experience</h3>
+                    <ul id="experienceTimeline" class="timeline"></ul>
+                </article>
+                <article class="info-card reveal">
+                    <h2>About Me</h2>
+                    <p id="aboutText" class="section-intro">
+                        I am a passionate developer focused on creating performant, accessible, and user-focused
+                        applications.
+                    </p>
+                    <h3>Education</h3>
+                    <ul id="educationTimeline" class="timeline"></ul>
+
+                   
+                </article>
+            </div>
+        </section>
+
+         <section id="skills" class="section">
+            <div class="container">
+                <h2>Skills</h2>
+                <p class="section-intro">A curated list of technical skills, tools, and expertise I use to build modern applications.</p>
+                <div id="skillsGrid" class="grid reveal"></div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Projects</h2>
+                <p class="section-intro">Selected projects with description, tech stack, and links to live demos and
+                    source code.</p>
+                <div id="projectsGrid" class="grid reveal"></div>
+            </div>
+        </section>
+
+        <section id="certificates" class="section">
+            <div class="container">
+                <h2>Certificates</h2>
+                <p class="section-intro">Tap any certificate to open its full details and external verification link.
+                </p>
+                <div id="certificatesGrid" class="grid reveal"></div>
+            </div>
+        </section>
+
+       
+
+        <section id="contact" class="section">
+            <div class="container contact-layout">
+                <article class="info-card reveal">
+
+                    <ul class="info-list">
+                        <li class="info-list__heading">
+                            <h2>Contact</h2>
+                        </li>
+                        <li><strong>Email:</strong> <span id="contactEmail">youremail@gmail.com</span></li>
+                        <li><strong>Phone:</strong> <span id="contactPhone">+91 00000 00000</span></li>
+                        <li><strong>Location:</strong> <span id="contactLocation">Your City, Country</span></li>
+                        <li class="info-list__social">
+                            <div id="socialLinksContact" class="social-list">
+                                <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+                                <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+                <article class="form-card reveal">
+                    <h2>Send a Message</h2>
+                    <form id="contactForm" novalidate>
+                        <div class="form-grid">
+                            <div class="input-wrap">
+                                <label for="name">Name</label>
+                                <input id="name" name="name" type="text" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="phone">Phone</label>
+                                <input id="phone" name="phone" type="tel" required />
+                            </div>
+                            <div class="input-wrap">
+                                <label for="subject">Subject</label>
+                                <input id="subject" name="subject" type="text" required />
+                            </div>
+                        </div>
+                        <div class="input-wrap">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit Message</button>
+                        <p id="formStatus" class="status" aria-live="polite"></p>
+                    </form>
+                </article>
+            </div>
         </section>
     </main>
 

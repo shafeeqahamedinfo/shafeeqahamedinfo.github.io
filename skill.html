@@ -4,17 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="tPDEEIM07uCY6uw4BFG9kpHrJu0hHAsqkiKpwEUIcqI" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills - ShafeeqAhamed M Portfolio</title>
-    <meta name="description" content="Skills - Shafeeq Ahamed M. Technical skills, tools, and expertise.">
-    <meta name="author" content="ShafeeqAhamed M">
-    <link rel="icon" href="shafeeq.jpeg" type="image/x-icon" />
+    <meta name="description" content="Skill details page" />
+    <title>Skill Details</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-
     <link rel="preload" as="style"
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
         onload="this.onload=null;this.rel='stylesheet'" />
@@ -22,180 +15,49 @@
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" />
     </noscript>
-
-    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWix+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkR4j8R3Qz4hU6TQW4fF9Qc6M3S+f2u2Q1EA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-            integrity="sha512-SnH5WK+bZxgPHs44uWix+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkR4j8R3Qz4hU6TQW4fF9Qc6M3S+f2u2Q1EA=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </noscript>
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <script>
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-});
-</script>
-   <script>
-document.addEventListener('keydown', function(e) {
-
-    // Block Ctrl+U (View Source)
-    if (e.ctrlKey && e.key.toLowerCase() === 'u') {
-        e.preventDefault();
-        return false;
-    }
-
-    // Block F12
-    if (e.key === 'F12') {
-        e.preventDefault();
-        return false;
-    }
-
-    // Block Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
-    if (e.ctrlKey && e.shiftKey &&
-        ['i', 'j', 'c'].includes(e.key.toLowerCase())) {
-        e.preventDefault();
-        return false;
-    }
-});
-</script>
 </head>
 
-<body class="bottom-nav">
-
-    <canvas id="Matrix" class="matrix-canvas" aria-hidden="true"></canvas>
-    <script>
-        (() => {
-            const canvas = document.getElementById("Matrix");
-            if (!canvas) return;
-
-            const context = canvas.getContext("2d");
-            if (!context) return;
-
-            const prefersReducedMotion = window.matchMedia
-                ? window.matchMedia("(prefers-reduced-motion: reduce)")
-                : null;
-            if (prefersReducedMotion?.matches) return;
-
-            const katakana =
-                "";
-            const latin = "SHAFEEQAHAMED M";
-            const nums = "+91 8489481039";
-            const alphabet = katakana + latin + nums;
-
-            const fontSize = 16;
-            let columns = 0;
-            let rainDrops = [];
-
-            let rafId = 0;
-            let running = false;
-            let lastFrameMs = 0;
-            const frameIntervalMs = 33; // ~30fps
-
-            const resizeCanvas = () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-                columns = Math.floor(canvas.width / fontSize);
-                rainDrops = new Array(columns).fill(1);
-            };
-
-            const draw = (now) => {
-                if (!running) return;
-                rafId = requestAnimationFrame(draw);
-                if (now - lastFrameMs < frameIntervalMs) return;
-                lastFrameMs = now;
-
-                context.fillStyle = "rgba(0, 0, 0, 0.05)";
-                context.fillRect(0, 0, canvas.width, canvas.height);
-
-                context.fillStyle = "rgb(241, 239, 247)";
-                context.font = `${fontSize}px monospace`;
-
-                for (let i = 0; i < rainDrops.length; i += 1) {
-                    const text = alphabet.charAt((Math.random() * alphabet.length) | 0);
-                    context.fillText(text, i * fontSize, rainDrops[i] * fontSize);
-
-                    if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                        rainDrops[i] = 0;
-                    }
-                    rainDrops[i] += 1;
-                }
-            };
-
-            const start = () => {
-                if (running) return;
-                if (document.hidden) return;
-                if (prefersReducedMotion?.matches) return;
-                running = true;
-                lastFrameMs = performance.now();
-                rafId = requestAnimationFrame(draw);
-            };
-
-            const stop = () => {
-                running = false;
-                if (rafId) cancelAnimationFrame(rafId);
-                rafId = 0;
-            };
-
-            resizeCanvas();
-            window.addEventListener("resize", resizeCanvas, { passive: true });
-            document.addEventListener("visibilitychange", () => {
-                if (document.hidden) stop();
-                else start();
-            });
-
-            if (prefersReducedMotion) {
-                const handler = () => {
-                    if (prefersReducedMotion.matches) stop();
-                    else start();
-                };
-                if (typeof prefersReducedMotion.addEventListener === "function") {
-                    prefersReducedMotion.addEventListener("change", handler);
-                } else if (typeof prefersReducedMotion.addListener === "function") {
-                    prefersReducedMotion.addListener(handler);
-                }
-            }
-
-            if ("requestIdleCallback" in window) {
-                requestIdleCallback(start, { timeout: 1500 });
-            } else {
-                setTimeout(start, 0);
-            }
-        })();
-    </script>
-
-    <header class="site-header site-header--bottom">
+<body>
+    <header class="site-header">
         <div class="container">
-            <nav class="main-nav" style="background-color: black;">
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-               <div class="nav-links" id="navLinks">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="skill.html">Skills</a>
-                    <a href="projects.html">Projects</a>
-                    <a href="certificates.html">Certificates</a>
-                    <a href="contact.html">Contact</a>
+            <nav class="main-nav">
+                <a class="brand" href="index.html">My Portfolio</a>
+                <div class="nav-links">
+                    <a href="index.html#skills">Back to Skills</a>
                 </div>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section id="skills" class="section">
-            <div class="container">
-                <h2>Skills</h2>
-                <p class="section-intro">A curated list of technical skills, tools, and expertise I use to build modern applications.</p>
-                <div id="skillsGrid" class="grid reveal"></div>
-            </div>
+    <main class="container">
+        <section class="page-header">
+            <h1 id="skillTitle">Skill Details</h1>
+            <p id="skillPercent">Knowledge: 0%</p>
+        </section>
+
+        <section class="details-layout">
+            <article class="details-card">
+                <img id="skillImage" src="assets/images/project-placeholder.svg" loading="lazy" alt="Skill image" />
+            </article>
+
+            <article class="details-card">
+                <h2>Summary</h2>
+                <p id="skillSummaryText" class="section-intro">Summary appears here.</p>
+
+                <h2>Details</h2>
+                <p id="skillDetailsText">Details appear here.</p>
+
+                <h2>Tools</h2>
+                <div id="skillTools" class="badge-list"></div>
+
+                <h2>Related Projects</h2>
+                <div id="relatedProjects" class="project-links"></div>
+            </article>
         </section>
     </main>
 
-    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/skill-details.js"></script>
 </body>
 
 </html>

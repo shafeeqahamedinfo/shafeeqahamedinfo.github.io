@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Project details page" />
+    <title>Project Details | Shafeeq Ahamed M</title>
+    <link rel="icon" href="shafeeq.jpeg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" />
+    </noscript>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+    <canvas id="Matrix" class="matrix-canvas" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a class="brand" href="index.html">
+                    <i class="fa-solid fa-code" style="color: var(--accent); margin-right: 0.4rem;"></i>Shafeeq Ahamed
+                </a>
+                <div class="nav-links">
+                    <a href="index.html#projects" class="btn btn-secondary">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Projects
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <span>/</span>
+                <a href="index.html#projects">Projects</a>
+                <span>/</span>
+                <span style="color: #fff;">Details</span>
+            </div>
+            <div class="page-category-tag">
+                <i class="fa-solid fa-rocket"></i> Featured Project
+            </div>
+            <h1 id="projectTitle" class="page-title-heading">Project Details</h1>
+            <p id="projectSummary" class="page-summary-lead">Complete breakdown of architectural details, technology stack, and live resources.</p>
+        </section>
+
+        <section class="details-layout">
+            <article class="details-card">
+                <h2><i class="fa-solid fa-images"></i> Project Gallery</h2>
+                <div class="slider" id="projectSlider">
+                    <div class="slider-track" id="sliderTrack"></div>
+                </div>
+                <div class="slider-nav">
+                    <button id="prevSlide" type="button"><i class="fa-solid fa-chevron-left"></i> Previous</button>
+                    <button id="nextSlide" type="button">Next <i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </article>
+
+            <article class="details-card">
+                <h2><i class="fa-solid fa-circle-info"></i> Project Overview</h2>
+                <p id="projectDescription">Description appears here.</p>
+                
+                <h2><i class="fa-solid fa-layer-group"></i> Tech Stack</h2>
+                <div id="projectTech" class="badge-list"></div>
+                
+                <h2><i class="fa-solid fa-link"></i> Links &amp; Demo</h2>
+                <div class="project-links">
+                    <a id="liveDemo" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Preview
+                    </a>
+                    <a id="githubRepo" class="btn btn-secondary" href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i> View Source Code
+                    </a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom-content">
+                <p>&copy; 2026 ShafeeqAhamed M. All rights reserved.</p>
+                <a href="index.html" class="scroll-to-top" title="Back to home">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/dataService.js"></script>
+    <script src="assets/js/project-details.js"></script>
+</body>
+
+</html>

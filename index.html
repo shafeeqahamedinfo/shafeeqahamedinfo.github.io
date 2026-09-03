@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShafeeqAhamed M Portfolio</title>
+    <meta name="google-site-verification" content="tPDEEIM07uCY6uw4BFG9kpHrJu0hHAsqkiKpwEUIcqI" />
+    <meta name="google-site-verification" content="hSOqNk-DcUxr4Qm7s7BedSXdNd16fRdUaFH-PpVyALU" />
+    <meta name="description" content="Shafeeq Ahamed M - B.E. CSE student at Annamalai University. Passionate about web development, software engineering, and creative tech projects.">
+    <meta name="author" content="ShafeeqAhamed M">
+    <link rel="icon" href="shafeeq.jpeg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" />
+    </noscript>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  <!--  <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && e.key.toLowerCase() === 'u') {
+                e.preventDefault();
+                return false;
+            }
+            if (e.key === 'F12') {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase())) {
+                e.preventDefault();
+                return false;
+            }
+        });
+    </script>-->
+</head>
+
+<body class="bottom-nav">
+
+    <canvas id="Matrix" class="matrix-canvas" aria-hidden="true"></canvas>
+    <script>
+        (() => {
+            const canvas = document.getElementById("Matrix");
+            if (!canvas) return;
+
+            const context = canvas.getContext("2d");
+            if (!context) return;
+
+            const prefersReducedMotion = window.matchMedia
+                ? window.matchMedia("(prefers-reduced-motion: reduce)")
+                : null;
+            if (prefersReducedMotion?.matches) return;
+
+            const latin = "SHAFEEQAHAMED M";
+            const nums = "+91 8489481039";
+            const alphabet = latin + nums;
+
+            const fontSize = 16;
+            let columns = 0;
+            let rainDrops = [];
+
+            let rafId = 0;
+            let running = false;
+            let lastFrameMs = 0;
+            const frameIntervalMs = 33; // ~30fps
+
+            const resizeCanvas = () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                columns = Math.floor(canvas.width / fontSize);
+                rainDrops = new Array(columns).fill(1);
+            };
+
+            const draw = (now) => {
+                if (!running) return;
+                rafId = requestAnimationFrame(draw);
+                if (now - lastFrameMs < frameIntervalMs) return;
+                lastFrameMs = now;
+
+                context.fillStyle = "rgba(0, 0, 0, 0.05)";
+                context.fillRect(0, 0, canvas.width, canvas.height);
+
+                context.fillStyle = "rgb(241, 239, 247)";
+                context.font = `${fontSize}px monospace`;
+
+                for (let i = 0; i < rainDrops.length; i += 1) {
+                    const text = alphabet.charAt((Math.random() * alphabet.length) | 0);
+                    context.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+
+                    if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        rainDrops[i] = 0;
+                    }
+                    rainDrops[i] += 1;
+                }
+            };
+
+            const start = () => {
+                if (running) return;
+                if (document.hidden) return;
+                if (prefersReducedMotion?.matches) return;
+                running = true;
+                lastFrameMs = performance.now();
+                rafId = requestAnimationFrame(draw);
+            };
+
+            const stop = () => {
+                running = false;
+                if (rafId) cancelAnimationFrame(rafId);
+                rafId = 0;
+            };
+
+            resizeCanvas();
+            window.addEventListener("resize", resizeCanvas, { passive: true });
+            document.addEventListener("visibilitychange", () => {
+                if (document.hidden) stop();
+                else start();
+            });
+
+            setTimeout(start, 0);
+        })();
+    </script>
+
+    <header class="site-header site-header--bottom">
+        <div class="container">
+            <nav class="main-nav" style="background-color: black;">
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#certificates">Certificates</a>
+                    <a href="#contact">Contact</a>
+                    <a href="shafeeqahamed.png" target="_blank" download="Shafeeq_Ahamed_Resume.png" class="btn btn-secondary nav-resume-btn">
+                        <i class="fa-solid fa-file-pdf"></i> Resume
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="container hero reveal">
+            <article class="hero-card hero-glass-card">
+                <div class="hero-grid">
+                    <div class="hero-content-left">
+                        <div class="hero-status-pill">
+                            <span class="pulse-dot"></span> Available for Web Projects &amp; Collaborations
+                        </div>
+                        <h1 id="heroName" class="hero-title">Hi, I am <span class="gradient-text">SHAFEEQAHAMED M</span></h1>
+                        <p id="heroIntro" class="hero-subtitle">
+                            Creating beautiful, functional websites and applications with passion and precision.
+                        </p>
+                        <div class="hero-actions">
+                            <a class="btn btn-primary btn-glow" href="#projects">
+                                <i class="fa-solid fa-briefcase"></i> See My Work
+                            </a>
+                            <a class="btn btn-secondary" href="shafeeqahamed.png" target="_blank" download="Shafeeq_Ahamed_Resume.png">
+                                <i class="fa-solid fa-file-arrow-down"></i> Resume
+                            </a>
+                            <a class="btn btn-secondary" href="#contact">
+                                <i class="fa-solid fa-paper-plane"></i> Contact Me
+                            </a>
+                        </div>
+                        <div id="socialLinks" class="social-list">
+                            <a href="https://www.instagram.com/shafeeqahamedinfo?igsi=NGs3NzJpMG55OXl6" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://github.com/shafeeqahamedinfo" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/shafeeqahamed-m-40b72a309/" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero-avatar-wrapper">
+                        <div class="floating-badge badge-top-left">
+                            <i class="fa-solid fa-graduation-cap"></i> B.E. CSE Student
+                        </div>
+                        <div class="hero-avatar-frame">
+                            <img id="profileImageHero" src="hero-profile.png" alt="Shafeeq Ahamed M" class="hero-avatar-img" loading="eager" />
+                        </div>
+                        <div class="floating-badge badge-bottom-right">
+                            <i class="fa-solid fa-code"></i> Web Developer
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container about-layout">
+                <article class="info-card about-left-card reveal">
+                    <div class="profile-frame">
+                        <img id="profileImageAbout" class="profile-img" src="about-profile-v2.png" loading="lazy" alt="Shafeeq Ahamed M" />
+                        <div class="profile-badge">
+                            <i class="fa-solid fa-code"></i> Developer
+                        </div>
+                    </div>
+                    
+                    <div class="about-card-section">
+                        <h3 class="sub-heading"><i class="fa-solid fa-briefcase"></i> Experience</h3>
+                        <ul id="experienceTimeline" class="timeline">
+                            <li>
+                                <div class="timeline-header">
+                                    <strong>Student Developer</strong>
+                                    <span class="timeline-badge">2024 - Present</span>
+                                </div>
+                                <div class="timeline-meta"><i class="fa-solid fa-building"></i> Fresher • <i class="fa-solid fa-location-dot"></i> Tamil Nadu, India</div>
+                                <p class="timeline-desc">Actively developing web projects, participating in technical symposiums, and expanding knowledge through NPTEL certifications and self-driven coding.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="info-card about-right-card reveal">
+                    <span class="page-category-tag"><i class="fa-solid fa-user"></i> About Me</span>
+                    <h2>Passionate Developer &amp; Engineer</h2>
+                    <p id="aboutText" class="section-intro">
+                        I'm a passionate Web Developer and Computer Science student with a strong foundation in Mechanical Engineering. My journey from mechanical design to web development has given me a unique perspective on problem-solving and design thinking. I completed my Diploma in Mechanical Engineering at MRK Polytechnic College and am currently pursuing a B.E. in Computer Science and Engineering at Annamalai University. I enjoy building modern web applications, portfolio websites, cloud-based systems, and innovative digital solutions.
+                    </p>
+
+                    <div class="about-highlights-grid">
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-gears"></i>
+                            <div>
+                                <span class="highlight-title">Mechanical Eng.</span>
+                                <span class="highlight-sub">Diploma (2020-23)</span>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-laptop-code"></i>
+                            <div>
+                                <span class="highlight-title">CSE Undergraduate</span>
+                                <span class="highlight-sub">B.E. (2024-27)</span>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-globe"></i>
+                            <div>
+                                <span class="highlight-title">Web Development</span>
+                                <span class="highlight-sub">Frontend &amp; Tools</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="sub-heading"><i class="fa-solid fa-graduation-cap"></i> Education Journey</h3>
+                    <ul id="educationTimeline" class="timeline">
+                        <li>
+                            <div class="timeline-header">
+                                <strong>Diploma in Mechanical Engineering</strong>
+                                <span class="timeline-badge">2020 - 2023</span>
+                            </div>
+                            <div class="timeline-meta"><i class="fa-solid fa-building-columns"></i> MRK Polytechnic College</div>
+                            <p class="timeline-desc">Completed Diploma with strong fundamentals in engineering concepts, manufacturing, and design thinking.</p>
+                        </li>
+                        <li>
+                            <div class="timeline-header">
+                                <strong>B.E. Computer Science and Engineering</strong>
+                                <span class="timeline-badge">2024 - 2027</span>
+                            </div>
+                            <div class="timeline-meta"><i class="fa-solid fa-university"></i> Annamalai University</div>
+                            <p class="timeline-desc">Currently pursuing B.E. CSE focusing on Web Development, Databases, Software Engineering, and Cloud Technologies.</p>
+                        </li>
+                    </ul>
+                    <div class="resume-cta-box" style="margin-top: 1.8rem; padding-top: 1.2rem; border-top: 1px solid rgba(212, 175, 55, 0.15); display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+                        <div>
+                            <h4 style="margin: 0 0 0.3rem; color: #fff; font-size: 1rem;"><i class="fa-solid fa-file-lines" style="color: var(--accent); margin-right: 0.4rem;"></i> Looking for my Resume?</h4>
+                            <p style="margin: 0; color: var(--muted); font-size: 0.88rem;">Download a copy of my CV to view my full background &amp; qualifications.</p>
+                        </div>
+                        <a href="shafeeqahamed.png" target="_blank" download="Shafeeq_Ahamed_Resume.png" class="btn btn-primary btn-glow" style="padding: 0.6rem 1.2rem; font-size: 0.88rem;">
+                            <i class="fa-solid fa-download"></i> Download Resume
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-glass-card reveal">
+                    <div class="section-header-wrap" style="margin-bottom: 2rem;">
+                        <span class="page-category-tag"><i class="fa-solid fa-code"></i> Technical Stack</span>
+                        <h2>Skills &amp; Expertise</h2>
+                        <p class="section-intro">A curated list of technical skills, tools, and expertise I use to build modern applications.</p>
+                    </div>
+                    <div id="skillsGrid" class="grid">
+                        <article class="card skill-card">
+                            <div class="skill-card-top">
+                                <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+                                <div class="skill-meta">
+                                    <h3>HTML</h3>
+                                    <span class="skill-badge">90%</span>
+                                </div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress__bar" style="--fill: 90%;"></div>
+                            </div>
+                        </article>
+
+                        <article class="card skill-card">
+                            <div class="skill-card-top">
+                                <div class="skill-icon"><i class="fa-brands fa-css3-alt"></i></div>
+                                <div class="skill-meta">
+                                    <h3>CSS</h3>
+                                    <span class="skill-badge">75%</span>
+                                </div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress__bar" style="--fill: 75%;"></div>
+                            </div>
+                        </article>
+
+                        <article class="card skill-card">
+                            <div class="skill-card-top">
+                                <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+                                <div class="skill-meta">
+                                    <h3>JavaScript</h3>
+                                    <span class="skill-badge">60%</span>
+                                </div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress__bar" style="--fill: 60%;"></div>
+                            </div>
+                        </article>
+
+                        <article class="card skill-card">
+                            <div class="skill-card-top">
+                                <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+                                <div class="skill-meta">
+                                    <h3>SQL</h3>
+                                    <span class="skill-badge">50%</span>
+                                </div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress__bar" style="--fill: 50%;"></div>
+                            </div>
+                        </article>
+
+                        <article class="card skill-card">
+                            <div class="skill-card-top">
+                                <div class="skill-icon"><i class="fa-brands fa-github"></i></div>
+                                <div class="skill-meta">
+                                    <h3>Git &amp; GitHub</h3>
+                                    <span class="skill-badge">80%</span>
+                                </div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress__bar" style="--fill: 80%;"></div>
+                            </div>
+                        </article>
+
+                        <article class="card skill-card">
+                            <div class="skill-card-top">
+                                <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+                                <div class="skill-meta">
+                                    <h3>Python</h3>
+                                    <span class="skill-badge">70%</span>
+                                </div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress__bar" style="--fill: 70%;"></div>
+                            </div>
+                        </article>
+
+                        <article class="card skill-card">
+                            <div class="skill-card-top">
+                                <div class="skill-icon"><i class="fa-brands fa-bootstrap"></i></div>
+                                <div class="skill-meta">
+                                    <h3>Bootstrap</h3>
+                                    <span class="skill-badge">70%</span>
+                                </div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress__bar" style="--fill: 70%;"></div>
+                            </div>
+                        </article>
+
+                        <article class="card skill-card">
+                            <div class="skill-card-top">
+                                <div class="skill-icon"><i class="fa-brands fa-php"></i></div>
+                                <div class="skill-meta">
+                                    <h3>PHP</h3>
+                                    <span class="skill-badge">70%</span>
+                                </div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress__bar" style="--fill: 70%;"></div>
+                            </div>
+                        </article>
+
+                        <article class="card skill-card">
+                            <div class="skill-card-top">
+                                <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+                                <div class="skill-meta">
+                                    <h3>MySQL</h3>
+                                    <span class="skill-badge">60%</span>
+                                </div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress__bar" style="--fill: 60%;"></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-glass-card reveal">
+                    <div class="section-header-wrap" style="margin-bottom: 2rem;">
+                        <span class="page-category-tag"><i class="fa-solid fa-briefcase"></i> Portfolio</span>
+                        <h2>Featured Projects</h2>
+                        <p class="section-intro">Selected projects with description, tech stack, and links to live demos and source code.</p>
+                    </div>
+                    <div id="projectsGrid" class="grid">
+                       
+                       
+                        <a href="project.html?id=4" class="card">
+                            <img src="assets/image porject/compsem/compsem (19).png" loading="lazy" decoding="async" alt="COMPSEM '26">
+                            <h3>COMPSEM '26</h3>
+                            <p>University Symposium Management Platform</p>
+                            <span class="card-link">View Project Details <i class="fa-solid fa-arrow-right"></i></span>
+                        </a>
+                        <a href="project.html?id=5" class="card">
+                            <img src="assets/image porject/pwms/pwms (2).png" loading="lazy" decoding="async" alt="Product & Warehouse Management System">
+                            <h3>Product & Warehouse Management System</h3>
+                            <p>Efficient management solution for products and inventory</p>
+                            <span class="card-link">View Project Details <i class="fa-solid fa-arrow-right"></i></span>
+                        </a>
+                         <a href="project.html?id=3" class="card">
+                            <img src="assets/image porject/billing/billing project (3).png" loading="lazy" decoding="async" alt="Billing Software">
+                            <h3>Billing Software</h3>
+                            <p>GST billing and inventory system</p>
+                            <span class="card-link">View Project Details <i class="fa-solid fa-arrow-right"></i></span>
+                        </a>
+                         <a href="project.html?id=1" class="card">
+                            <img src="assets/image porject/clone/clone (1).png", loading="lazy" decoding="async" alt="Cloud Store">
+                            <h3>Cloud Store</h3>
+                            <p>Cloud storage management platform</p>
+                            <span class="card-link">View Project Details <i class="fa-solid fa-arrow-right"></i></span>
+                        </a>
+                        <a href="project.html?id=2" class="card">
+                            <img src="assets/image porject/social/hub (7).png" loading="lazy" decoding="async" alt="Social Media Hub">
+                            <h3>Social Media Hub</h3>
+                            <p>Social networking platform</p>
+                            <span class="card-link">View Project Details <i class="fa-solid fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificates" class="section">
+            <div class="container">
+                <div class="section-glass-card reveal">
+                    <div class="section-header-wrap" style="margin-bottom: 2rem;">
+                        <span class="page-category-tag"><i class="fa-solid fa-award"></i> Achievements</span>
+                        <h2>Certifications &amp; Credentials</h2>
+                        <p class="section-intro">Tap any certificate to open its full details and external verification link.</p>
+                    </div>
+                    <div id="certificatesGrid" class="grid">
+                        <a href="certificate.html?id=2" class="card">
+                            <img src="assets/Certifications/Social Networks (1)_page-0001.jpg" loading="lazy" decoding="async" alt="Social Networks">
+                            <h3>Social Networks</h3>
+                            <p>NPTEL Certification</p>
+                            <span class="card-link">View Certificate Details <i class="fa-solid fa-arrow-right"></i></span>
+                        </a>
+                        <a href="certificate.html?id=1" class="card">
+                            <img src="assets/Certifications/NPTEL26CS55S95310080204640062_page-0001.jpg" loading="lazy" decoding="async" alt="Cloud Computing">
+                            <h3>Cloud Computing</h3>
+                            <p>NPTEL Certification</p>
+                            <span class="card-link">View Certificate Details <i class="fa-solid fa-arrow-right"></i></span>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="hero-card hero-glass-card" style="margin-bottom: 2rem;">
+                    <span class="page-category-tag"><i class="fa-solid fa-paper-plane"></i> Get In Touch</span>
+                    <h2>Let's Work Together</h2>
+                    <p class="section-intro">Have a project in mind, a query, or an opportunity? Feel free to reach out directly or send a message below.</p>
+                </div>
+
+                <div class="contact-layout">
+                    <article class="info-card contact-info-card reveal">
+                        <div class="contact-card-header">
+                            <h3>Contact Information</h3>
+                            <p>Reach out through any of these channels.</p>
+                        </div>
+
+                        <div class="contact-methods">
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="contact-text">
+                                    <label>Email</label>
+                                    <a id="contactEmail" href="mailto:m.shafeeqahamed2004@gmail.com">m.shafeeqahamed2004@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="contact-text">
+                                    <label>Phone</label>
+                                    <a id="contactPhone" href="tel:+918489481039">+91 8489481039</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="contact-text">
+                                    <label>Location</label>
+                                    <span id="contactLocation">Tamil Nadu, India</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social-wrap">
+                            <h4>Connect On Social</h4>
+                            <div id="socialLinksContact" class="social-list">
+                                <a href="https://www.instagram.com/shafeeqahamedinfo?igsi=NGs3NzJpMG55OXl6" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-instagram"></i> Instagram
+                                </a>
+                                <a href="https://github.com/shafeeqahamedinfo" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                                <a href="https://www.linkedin.com/in/shafeeqahamed-m-40b72a309/" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="form-card contact-form-card reveal">
+                        <div class="contact-card-header">
+                            <h3>Send a Message</h3>
+                            <p>Fill in the form below and I'll get back to you promptly.</p>
+                        </div>
+
+                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+                            <input type="hidden" name="access_key" value="8d404da1-45dc-47c2-ac0d-20c1fcf7dc6d" />
+                            <div class="form-grid">
+                                <div class="input-wrap">
+                                    <label for="name"><i class="fa-solid fa-user"></i> Full Name</label>
+                                    <input id="name" name="name" type="text" placeholder="John Doe" required />
+                                </div>
+                                <div class="input-wrap">
+                                    <label for="email"><i class="fa-solid fa-at"></i> Email Address</label>
+                                    <input id="email" name="email" type="email" placeholder="john@example.com" required />
+                                </div>
+                                <div class="input-wrap">
+                                    <label for="phone"><i class="fa-solid fa-phone"></i> Phone Number</label>
+                                    <input id="phone" name="phone" type="tel" placeholder="+91 00000 00000" required />
+                                </div>
+                                <div class="input-wrap">
+                                    <label for="subject"><i class="fa-solid fa-pen-nib"></i> Subject</label>
+                                    <input id="subject" name="subject" type="text" placeholder="Project Inquiry" required />
+                                </div>
+                            </div>
+                            <div class="input-wrap">
+                                <label for="message"><i class="fa-solid fa-comment"></i> Your Message</label>
+                                <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+                            </div>
+                            <button class="btn btn-primary btn-submit-message" type="submit">
+                                Send Message <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                            <p id="formStatus" class="status" aria-live="polite"></p>
+                        </form>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/dataService.js"></script>
+    <script src="assets/js/skillRenderer.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

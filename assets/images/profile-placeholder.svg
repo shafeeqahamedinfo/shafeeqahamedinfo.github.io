@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Profile Placeholder</title>
+  <desc id="desc">Stylized profile illustration placeholder image.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e7490"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <circle cx="400" cy="320" r="150" fill="#e2e8f0" opacity="0.95"/>
+  <rect x="180" y="520" width="440" height="320" rx="180" fill="#e2e8f0" opacity="0.92"/>
+  <text x="400" y="930" fill="#f8fafc" font-size="44" text-anchor="middle" font-family="Segoe UI, sans-serif">Your Photo</text>
+</svg>

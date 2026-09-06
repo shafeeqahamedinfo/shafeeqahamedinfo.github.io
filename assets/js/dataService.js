@@ -172,18 +172,18 @@ window.PortfolioData = (function () {
            "assets/image porject/pwms/pwms (14).png" ,
            "assets/image porject/pwms/pwms (13).png" ,
            "assets/image porject/pwms/pwms (12).png" ,
-           "assets/image porject/pwms(pwm s (11).png", 
-           "assets/image porject/pwms(pwm s (10).png" ,
-           "assets/image porject/pwms(pwm s (9).png",
-            "assets/image porject/pwms(pwm s (8).png", 
-            "assets/image porject/pwms(pwm s (7).png" ,
-            "assets/image porject/pwms(pwm s (6).png" ,
-            "assets/image porject	pwms(pwm s (5).png" 
+           "assets/image porject/pw ms(pwm s (11).png", 
+           "assets/image porject/pw ms(pwm s (10).png" ,
+           "assets/image porject/p w ms(pwm s (9).png",
+            "assets/image porject/p w ms(pwm s (8).png", 
+            "assets/image porject/p w ms(pwm s (7).png" ,
+            "assets/image porject/p w ms(pwm s (6).png" ,
+            "assets/image porject	p w ms(pwm s (5).png" 
             
         ],
         live_url: "https://pwmserp.freedev.app",
         github_url: "https://github.com/shafeeqahamedinfo/Product-Warehouse-Management-System"
-      }, {
+      },      {
         id: 6,
         title: "shoe store",
         summary: "E-commerce platform for shoe sales",

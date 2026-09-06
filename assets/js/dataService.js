@@ -184,6 +184,24 @@ window.PortfolioData = (function () {
         live_url: "https://pwmserp.freedev.app",
         github_url: "https://github.com/shafeeqahamedinfo/Product-Warehouse-Management-System"
       }
+      ,      {
+        id: 6,
+        title: "shoe store",
+        summary: "E-commerce platform for shoe sales",
+        description:
+          "An e-commerce platform for selling shoes online, featuring a user-friendly interface and seamless checkout process.",
+        tech_stack: ["HTML", "CSS", "JavaScript"],
+        images: [
+          "assets/image porject/shoe shop/shoe (1).png",
+          "assets/image porject/shoe shop/shoe (2).png",
+          "assets/image porject/shoe shop/shoe (3).png",
+          "assets/image porject/shoe shop/shoe (4).png",
+          "assets/image porject/shoe shop/shoe (5).png",
+          "assets/image porject/shoe shop/shoe (6).png"
+        ],
+        live_url: "https://recyclezone.neocities.org/haniffa%20footwear/",
+        github_url: "https://github.com/shafeeqahamedinfo/neocities-project/tree/main/footwear"
+      },
     ],
 
     certificates: [

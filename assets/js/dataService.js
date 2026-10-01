@@ -13,7 +13,7 @@ window.PortfolioData = (function () {
         "https://www.instagram.com/m_shafeeqahamed_sad/profilecard/",
       github_url: "https://github.com/shafeeqahamedinfo",
       linkedin_url:
-        "https://www.linkedin.com/in/shafeeqahamed-m-40b72a309/"
+        "www.linkedin.com/in/shafeeqahamedinfo"
     },
 
     education: [

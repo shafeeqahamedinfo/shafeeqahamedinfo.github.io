@@ -20,54 +20,78 @@ window.renderSkills = function (skills) {
 
   grid.replaceChildren();
 
-  const fragment = document.createDocumentFragment();
+  const groupedSkills = new Map();
   skills.forEach((skill) => {
-    const card = document.createElement("article");
-    card.className = "card skill-card";
+    const category = skill.category || "Other Skills";
+    if (!groupedSkills.has(category)) groupedSkills.set(category, []);
+    groupedSkills.get(category).push(skill);
+  });
 
-    const topRow = document.createElement("div");
-    topRow.className = "skill-card-top";
+  const fragment = document.createDocumentFragment();
+  groupedSkills.forEach((categorySkills, category) => {
+    const group = document.createElement("section");
+    group.className = "skill-group";
 
-    const iconClass = skill.icon || getIconClass(skill.title || skill.name);
-    const iconContainer = document.createElement("div");
-    iconContainer.className = "skill-icon";
-    const iconEl = document.createElement("i");
-    iconEl.className = iconClass;
-    iconContainer.appendChild(iconEl);
-    topRow.appendChild(iconContainer);
+    const heading = document.createElement("h3");
+    heading.className = "skill-group__heading";
+    heading.textContent = category;
+    group.appendChild(heading);
 
-    const metaBox = document.createElement("div");
-    metaBox.className = "skill-meta";
+    const categoryGrid = document.createElement("div");
+    categoryGrid.className = "skill-group__grid";
 
-    const title = document.createElement("h3");
-    title.textContent = skill.title || skill.name || "Untitled skill";
-    metaBox.appendChild(title);
+    categorySkills.forEach((skill) => {
+      const card = document.createElement("article");
+      card.className = "card skill-card";
+      if (skill.full_name) card.title = skill.full_name;
 
-    if (skill.knowledge_percent !== undefined && skill.knowledge_percent !== null) {
-      const pct = Math.min(100, Math.max(0, Number(skill.knowledge_percent)));
-      const badge = document.createElement("span");
-      badge.className = "skill-badge";
-      badge.textContent = `${pct}%`;
-      metaBox.appendChild(badge);
-    }
+      const topRow = document.createElement("div");
+      topRow.className = "skill-card-top";
 
-    topRow.appendChild(metaBox);
-    card.appendChild(topRow);
+      const iconClass = skill.icon || getIconClass(skill.title || skill.name);
+      const iconContainer = document.createElement("div");
+      iconContainer.className = "skill-icon";
+      const iconEl = document.createElement("i");
+      iconEl.className = iconClass;
+      iconContainer.appendChild(iconEl);
+      topRow.appendChild(iconContainer);
 
-    if (skill.knowledge_percent !== undefined && skill.knowledge_percent !== null) {
-      const pct = Math.min(100, Math.max(0, Number(skill.knowledge_percent)));
-      const progressWrapper = document.createElement("div");
-      progressWrapper.className = "skill-progress";
+      const metaBox = document.createElement("div");
+      metaBox.className = "skill-meta";
 
-      const progress = document.createElement("div");
-      progress.className = "skill-progress__bar";
-      progress.style.setProperty("--fill", `${pct}%`);
+      const title = document.createElement("h3");
+      title.textContent = skill.title || skill.name || "Untitled skill";
+      metaBox.appendChild(title);
 
-      progressWrapper.appendChild(progress);
-      card.appendChild(progressWrapper);
-    }
+      if (skill.knowledge_percent !== undefined && skill.knowledge_percent !== null) {
+        const pct = Math.min(100, Math.max(0, Number(skill.knowledge_percent)));
+        const badge = document.createElement("span");
+        badge.className = "skill-badge";
+        badge.textContent = `${pct}%`;
+        metaBox.appendChild(badge);
+      }
 
-    fragment.appendChild(card);
+      topRow.appendChild(metaBox);
+      card.appendChild(topRow);
+
+      if (skill.knowledge_percent !== undefined && skill.knowledge_percent !== null) {
+        const pct = Math.min(100, Math.max(0, Number(skill.knowledge_percent)));
+        const progressWrapper = document.createElement("div");
+        progressWrapper.className = "skill-progress";
+
+        const progress = document.createElement("div");
+        progress.className = "skill-progress__bar";
+        progress.style.setProperty("--fill", `${pct}%`);
+
+        progressWrapper.appendChild(progress);
+        card.appendChild(progressWrapper);
+      }
+
+      categoryGrid.appendChild(card);
+    });
+
+    group.appendChild(categoryGrid);
+    fragment.appendChild(group);
   });
 
   grid.appendChild(fragment);

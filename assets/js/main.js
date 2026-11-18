@@ -86,6 +86,8 @@
   async function init() {
     setupRevealAnimations();
     setupContactForm();
+    const data = await getPortfolioData();
+    renderSkills(data.skills || []);
   }
 
   if (document.readyState === "loading") {

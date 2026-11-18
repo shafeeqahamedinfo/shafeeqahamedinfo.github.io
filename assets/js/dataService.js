@@ -42,14 +42,40 @@ window.PortfolioData = (function () {
     experience: [
       {
         id: 1,
-        company: "Fresher",
+        company: "Freelance | Self-Employed",
         role: "Student Developer",
-        year_start: 2024,
+        employment_type: "Freelance",
+        year_start: "Sep 2024",
         year_end: null,
-        location: "Tamil Nadu, India",
+        location: "Tamil Nadu, India · Remote",
         description:
-          "No professional experience yet. Actively developing projects, participating in technical events, and earning certifications through NPTEL and self-learning.",
-        logo_url: ""
+          "Freelance student developer creating web and mobile web experiences.",
+        skills: ["Visual Web Development", "Mobile Web Design"],
+        company_url: "https://www.linkedin.com/company/1256222/"
+      },
+      {
+        id: 2,
+        company: "Danfoss",
+        role: "Warehouse Team Member",
+        employment_type: "Full-time",
+        year_start: "Nov 2023",
+        year_end: "Sep 2024",
+        location: "India · Hybrid",
+        description: "Warehouse team member with experience in SAP Warehouse Management.",
+        skills: ["SAP Warehouse Management"],
+        company_url: "https://www.linkedin.com/company/3260/"
+      },
+      {
+        id: 3,
+        company: "JBM Group",
+        role: "Quality Control",
+        employment_type: "Full-time",
+        year_start: "Jun 2023",
+        year_end: "Nov 2023",
+        location: "India · Hybrid",
+        description: "Worked in quality control at JBM Group.",
+        skills: ["Quality Control"],
+        company_url: "https://www.linkedin.com/company/132712/"
       }
     ],
 
@@ -201,6 +227,68 @@ window.PortfolioData = (function () {
         live_url: "https://recyclezone.neocities.org/haniffa%20footwear/",
         github_url: "https://github.com/shafeeqahamedinfo/neocities-project/tree/main/footwear"
       },
+      {
+        id: 7,
+        title: "Simple Calculator",
+        summary: "Mobile calculator application",
+        description:
+          "A simple and responsive Flutter calculator app for basic arithmetic operations, featuring a clean dark interface and large touch-friendly controls.",
+        tech_stack: ["Flutter", "Dart"],
+        images: [
+          "assets/image porject/flutter & dart/Simple Calculator flutter/Simple Calculator 2.jpeg",
+          "assets/image porject/flutter & dart/Simple Calculator flutter/Simple Calculator.jpeg"
+          
+        ],
+        live_url: "https://github.com/shafeeqahamedinfo/flutter-app-file",
+        github_url: "https://github.com/shafeeqahamedinfo/flutter-app-file"
+      },
+      {
+        id: 8,
+        title: "Text to Voice",
+        summary: "Flutter text-to-speech application",
+        description:
+          "A Flutter text-to-speech application with speed, pitch and volume controls, a speech microphone option, history, replay and clear controls.",
+        tech_stack: ["Flutter", "Dart", "Text-to-Speech"],
+        images: [
+          "assets/image porject/flutter & dart/text to vioce flutter/text to vioce  (1).jpeg",
+          "assets/image porject/flutter & dart/text to vioce flutter/text to vioce  (2).jpeg",
+          "assets/image porject/flutter & dart/text to vioce flutter/text to vioce  (3).jpeg"
+        ],
+        live_url: "https://github.com/shafeeqahamedinfo/flutter-app-file",
+        github_url: "https://github.com/shafeeqahamedinfo/flutter-app-file"
+      },
+      {
+        id: 9,
+        title: "SmartCampus IT Care",
+        summary: "MERN campus IT support and ticketing platform",
+        description:
+          "A role-based MERN stack IT support system for SmartCampus with student ticket creation, IT staff assignment, admin analytics, SLA monitoring, knowledge base articles, departments, categories, reports and activity logs.",
+        tech_stack: ["MongoDB", "Express.js", "React", "Node.js", "MERN Stack"],
+        images: [
+          "assets/image porject/it care support/it support.png",
+          "assets/image porject/it care support/it studend (5).png",
+          "assets/image porject/it care support/it studend (4).png",
+          "assets/image porject/it care support/it studend (3).png",
+          "assets/image porject/it care support/it studend (2).png",
+          "assets/image porject/it care support/it studend (1).png",
+          "assets/image porject/it care support/it support (1).png",
+          "assets/image porject/it care support/it support (2).png",
+          "assets/image porject/it care support/it support (3).png",
+          "assets/image porject/it care support/it support (4).png",
+          "assets/image porject/it care support/it support (5).png",
+          "assets/image porject/it care support/it support (6).png",
+          "assets/image porject/it care support/it support (7).png",
+          "assets/image porject/it care support/it support (8).png",
+          "assets/image porject/it care support/it support (9).png",
+          "assets/image porject/it care support/it support (10).png",
+          "assets/image porject/it care support/it staff (1).png",
+          "assets/image porject/it care support/it staff (02).png",
+          "assets/image porject/it care support/it staff (3).png",
+          "assets/image porject/it care support/it staff (04).png"
+        ],
+        live_url: "https://github.com/shafeeqahamedinfo/IT-Support-Ticket-Management-System",
+        github_url: "https://github.com/shafeeqahamedinfo/IT-Support-Ticket-Management-System"
+      },
     ],
 
     certificates: [
@@ -225,19 +313,86 @@ window.PortfolioData = (function () {
         certificate_url: "assets/Certifications/Social Networks (1).pdf",
         issued_by: "NPTEL",
         issued_on: "JUL-OCT 2025"
+      },
+      {
+        id: 3,
+        title: "Full Stack Development Internship",
+        summary: "Internship Certificate",
+        description:
+          "Completed a Summer Internship Training Program in Full Stack Development with Widezo Private Limited from 05 June 2025 to 03 July 2025.",
+        image_url: "assets/Certifications/Modern Blue Internship Certificate.png",
+        certificate_url: "assets/Certifications/Modern Blue Internship Certificate.png",
+        issued_by: "Widezo Private Limited",
+        issued_on: "05 JUN - 03 JUL 2025"
+      },
+      {
+        id: 4,
+        title: "Spot Recognition Award",
+        summary: "Danfoss Recognition Award",
+        description:
+          "Received the Danfoss Spot Recognition Award for taking ownership of customer needs and demonstrating a customer-centric approach.",
+        image_url: "assets/Certifications/Danfoss Spot Recognition Award.png",
+        certificate_url: "assets/Certifications/Danfoss Spot Recognition Award.png",
+        issued_by: "Danfoss",
+        issued_on: "30 APR 2024"
+      },
+      {
+        id: 5,
+        title: "COMPSEM'25 - Web Development & Design",
+        summary: "Certificate of Appreciation",
+        description:
+          "Awarded 11th place in the Web Development & Design event at COMPSEM'25, organized by the Department of Computer Science and Engineering, Annamalai University.",
+        image_url: "assets/Certifications/Annamalai University Certificate of Appreciation.png",
+        certificate_url: "assets/Certifications/Annamalai University Certificate of Appreciation.png",
+        issued_by: "Annamalai University",
+        issued_on: "19 MAR 2025"
+      },
+      {
+        id: 6,
+        title: "FEAT Library Voluntary Service",
+        summary: "Certificate of Appreciation",
+        description:
+          "Recognized for voluntary repair and maintenance work on computers and related infrastructure at the FEAT Library from 17 to 21 August 2026.",
+        image_url: "assets/Certifications/Annamalai University Appreciation Certificate.png",
+        certificate_url: "assets/Certifications/Annamalai University Appreciation Certificate.png",
+        issued_by: "Annamalai University - FEAT Library",
+        issued_on: "17 - 21 AUG 2026"
+      },
+      {
+        id: 7,
+        title: "COMPSEM'26 - UI/UX Design",
+        summary: "Certificate of Appreciation",
+        description:
+          "Secured 3rd place in the UI/UX Design event at COMPSEM'26, organized by the Department of Computer Science and Engineering, Annamalai University.",
+        image_url: "assets/Certifications/Annamalai University Appreciation Certificate (1).png",
+        certificate_url: "assets/Certifications/Annamalai University Appreciation Certificate (1).png",
+        issued_by: "Annamalai University",
+        issued_on: "18 APR 2026"
       }
     ],
 
     skills: [
-      { id: 1, title: "HTML", icon: "fa-brands fa-html5", knowledge_percent: 90 },
-      { id: 2, title: "CSS", icon: "fa-brands fa-css3-alt", knowledge_percent: 75 },
-      { id: 3, title: "JavaScript", icon: "fa-brands fa-js", knowledge_percent: 60 },
-      { id: 4, title: "SQL", icon: "fa-solid fa-database", knowledge_percent: 50 },
-      { id: 5, title: "Git & GitHub", icon: "fa-brands fa-github", knowledge_percent: 80 },
-      { id: 6, title: "Python", icon: "fa-brands fa-python", knowledge_percent: 70 },
-      { id: 7, title: "Bootstrap", icon: "fa-brands fa-bootstrap", knowledge_percent: 70 },
-      { id: 8, title: "PHP", icon: "fa-brands fa-php", knowledge_percent: 70 },
-      { id: 9, title: "MySQL", icon: "fa-solid fa-server", knowledge_percent: 60 }
+      { id: 1, title: "HTML", category: "Web Development", icon: "fa-brands fa-html5", knowledge_percent: 90 },
+      { id: 2, title: "CSS", category: "Web Development", icon: "fa-brands fa-css3-alt", knowledge_percent: 75 },
+      { id: 3, title: "JavaScript", category: "Web Development", icon: "fa-brands fa-js", knowledge_percent: 60 },
+      { id: 4, title: "SQL", category: "Databases & Developer Tools", icon: "fa-solid fa-database", knowledge_percent: 50 },
+      { id: 5, title: "Git & GitHub", category: "Databases & Developer Tools", icon: "fa-brands fa-github", knowledge_percent: 80 },
+      { id: 6, title: "Python", category: "Programming & Mobile Development", icon: "fa-brands fa-python", knowledge_percent: 70 },
+      { id: 7, title: "Bootstrap", category: "Web Development", icon: "fa-brands fa-bootstrap", knowledge_percent: 70 },
+      { id: 8, title: "PHP", category: "Web Development", icon: "fa-brands fa-php", knowledge_percent: 70 },
+      { id: 9, title: "MySQL", category: "Databases & Developer Tools", icon: "fa-solid fa-server", knowledge_percent: 60 },
+      { id: 10, title: "Flutter", category: "Programming & Mobile Development", icon: "fa-solid fa-mobile-screen-button", knowledge_percent: 50 },
+      { id: 11, title: "Dart", category: "Programming & Mobile Development", icon: "fa-solid fa-code", knowledge_percent: 50 },
+      { id: 12, title: "MERN Stack", category: "Web Development", icon: "fa-brands fa-react", knowledge_percent: 50 },
+      { id: 13, title: "IT Support", category: "IT Support & Hardware", full_name: "IT Support & Troubleshooting", icon: "fa-solid fa-headset", knowledge_percent: 50 },
+      { id: 14, title: "Windows Install", category: "Operating Systems & Networking", full_name: "Operating System Installation (Windows)", icon: "fa-brands fa-windows", knowledge_percent: 50 },
+      { id: 15, title: "MS Office", category: "Office Productivity", full_name: "MS Office (Word, Excel, PowerPoint)", icon: "fa-solid fa-file-word", knowledge_percent: 50 },
+      { id: 16, title: "Software Setup", category: "IT Support & Hardware", full_name: "Software Installation & Configuration", icon: "fa-solid fa-gears", knowledge_percent: 50 },
+      { id: 17, title: "HW/SW Troubleshooting", category: "IT Support & Hardware", full_name: "Hardware and Software Troubleshooting", icon: "fa-solid fa-screwdriver-wrench", knowledge_percent: 50 },
+      { id: 18, title: "Driver Updates", category: "IT Support & Hardware", full_name: "Driver Installation & Updates", icon: "fa-solid fa-download", knowledge_percent: 50 },
+      { id: 19, title: "Networking", category: "Operating Systems & Networking", full_name: "Basic Networking & Connectivity Troubleshooting", icon: "fa-solid fa-wifi", knowledge_percent: 50 },
+      { id: 20, title: "Windows Setup", category: "Operating Systems & Networking", full_name: "System Formatting and Windows Configuration", icon: "fa-brands fa-windows", knowledge_percent: 50 },
+      { id: 21, title: "Linux Install", category: "Operating Systems & Networking", full_name: "Linux Operating System Installation", icon: "fa-brands fa-linux", knowledge_percent: 50 },
     ]
   };
 

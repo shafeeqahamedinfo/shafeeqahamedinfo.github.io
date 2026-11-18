@@ -661,6 +661,25 @@ header.site-header.site-header--bottom .nav-links a:hover::after {
   gap: 0.6rem;
 }
 
+.skill-group {
+  grid-column: 1 / -1;
+}
+
+.skill-group__heading {
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+  color: var(--accent);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.15rem;
+}
+
+.skill-group__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
 /* Premium Glassmorphic Cards (Skills, Projects, Certificates) */
 .card {
   padding: 1.25rem 1.35rem;
@@ -2067,6 +2086,10 @@ html, body {
     gap: 1rem;
   }
 
+  .skill-group__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .hero,
   .about-layout,
   .contact-layout,
@@ -2146,6 +2169,10 @@ html, body {
   .grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .skill-group__grid {
+    grid-template-columns: 1fr;
   }
 
   .section {
